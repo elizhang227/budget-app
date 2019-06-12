@@ -13,6 +13,7 @@ create table daily
 (
     id serial primary key,
     daily_category text,
+    description text,
     daily_expense float,
     daily_id integer references users(id)
 );
