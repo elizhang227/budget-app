@@ -1,9 +1,18 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express'),
+  router = express.Router(),
+  UsersModel = require('../models/users');
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+router.get('/', async (req, res, next) => {
+  const allUsers = await UsersModel.getAllUsers();
+  res.render('template', {
+    locals: {
+      title: 'User Page',
+      userList: allUsers //array response from  our async request to the getAll() method
+    },
+    partials: {
+      partial: 'partial-users',
+    }
+  });
 });
 
 module.exports = router;

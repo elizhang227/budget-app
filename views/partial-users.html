@@ -1,0 +1,16 @@
+<section class='section'>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    ${userList.map(user =>
+      `<tr>
+        <td>${user.name}</td>
+        <td>${user.year}</td>
+      </tr>`
+      ).join('')}
+  </table>
+</section>
