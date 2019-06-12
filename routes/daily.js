@@ -30,7 +30,7 @@ router.post('/expenses', async function(req, res, next) {
     .then(async () => {
         //res.redirect(`/daily/expenses`);
         const test = await monthlyModel.getTotalDailyExpense(id.id);
-        await monthlyModel.subtractFromBalance(test.total);
+        await monthlyModel.subtractFromBalance(test.total, id.id);
         const test2 = await monthlyModel.getRemainingBalance(id.id);
         const listOfExpenses = await monthlyModel.getListOfExpenses(id.id);
 

@@ -44,11 +44,12 @@ class Daily {
         }
     }
 
-    static async subtractFromBalance(expense) {
+    static async subtractFromBalance(expense, id) {
         try {
             const response = await db.one(`
             update budget
-            set alloted_budget = alloted_budget - ${expense}`);
+            set alloted_budget = alloted_budget - ${expense}
+            where budget_id=${id}`);
             return response;
         } catch(err) {
             return err.message
