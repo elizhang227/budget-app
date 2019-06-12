@@ -1,18 +1,29 @@
 const db = require('./conn.js');
 
-class Monthly {
+class Daily {
     constructor(id){
         this.id = id;
     }
 
-    static async addExpense(category, expense) {
+    static async addExpense(category, description, expense) {
         const query = `
         INSERT INTO daily
-            (daily_category, daily_expense)
+            (daily_category, description, daily_expense)
         VALUES
-            ('${category}', ${expense})`;
+            ('${category}', '${description}', ${expense})`;
         try {
             let response = await db.result(query);
+            return response;
+        } catch(err) {
+            return err.message;
+        }
+    }
+
+    static async getListOfExpenses() {
+        try {
+            const response = await db.any(`
+            SELECT daily_category, description, daily_expense
+            FROM daily`);
             return response;
         } catch(err) {
             return err.message;
@@ -52,7 +63,7 @@ class Monthly {
             return err.message
         }
     }
-    
+
 }
 
-module.exports = Monthly;
+module.exports = Daily;

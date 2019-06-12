@@ -1,0 +1,39 @@
+<p>Total Daily Expense: $${expenseList.total}</p>
+<p>Remaining Balance: $${balance.alloted_budget}</p>
+
+<section class="section">
+    <table class="table">
+        <thead>
+            <tr>
+                <td><b>Category</b></td>
+                <td><b>Description</b></td>
+                <td><b>Cost</b></td>
+            </tr>
+        </thead>
+        ${listOfExpenses.map(x =>
+                `<tr>
+                    <td><a href="">${x.daily_category}</a></td>
+                    <td>${x.description}</td>
+                    <td>${x.daily_expense}</td>
+                </tr>`
+            ).join('')}
+    </table>
+</section>
+
+<section class="section">
+    <p><b>Add Expense</b></p>
+    <form action="/daily/expenses" method="POST">
+            <label><b>Category:</b>
+                <input type="text" name="category"/>
+            </label>
+            <label><b>Description:</b>
+                <input type="text" name="description"/>
+            </label>
+            <label><b>Expense:</b>
+                <input type="text" name="expense"/>
+            </label>
+        <div class="button">
+            <button type="submit">Add Expense</button>
+        </div>
+    </form>
+</section>

@@ -6,10 +6,11 @@ const express = require('express'),
     logger = require('morgan');
 
 const indexRouter = require('./routes/index'),
-    monthlyRouter = require('./routes/monthly'),
+    dailyRouter = require('./routes/daily'),
+    setupRouter = require('./routes/setup'),
     usersRouter = require('./routes/users');
 
-var app = express();
+const app = express();
 
 app.engine('html', es6Renderer);
 app.set('views', './views');
@@ -29,6 +30,7 @@ app.use(session({
 }));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/monthly', monthlyRouter);
+app.use('/daily', dailyRouter);
+app.use('/setup', setupRouter);
 
 module.exports = app;
