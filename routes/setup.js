@@ -3,20 +3,23 @@ const express = require('express'),
     setupModel = require('../models/setup');
 
 router.get('/', async function(req, res, next) {
-    res.render('template', {
-        locals: {
-            title: `Welcome to my dungeon`,//${req.session.first_name}`,
-            is_logged_in: req.session.is_logged_in,
-            userName: req.session.first_name
-            // booksList: allBooks,
-            // is_logged_in: req.session.is_logged_in,
-            // userName: req.session.first_name,
-            // email: req.session.email
-        },
-        partials: {
-            content: 'partial-setup'
-        }
-    })
+    if(!!req.session.is_logged_in) {
+        res.render('template', {
+            locals: {
+                title: `Welcome to my dungeon`,//${req.session.first_name}`,
+                is_logged_in: req.session.is_logged_in,
+                userName: req.session.first_name
+                // booksList: allBooks,
+                // email: req.session.email
+            },
+            partials: {
+                content: 'partial-setup'
+            }
+        })
+    } else {
+        res.redirect('/users/login');
+    }
+
 })
 
 router.post('/', async function(req, res, next) {
