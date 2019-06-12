@@ -21,26 +21,28 @@ router.get('/', async function(req, res, next) {
                 // email: req.session.email
             },
             partials: {
-                content: 'partial-home'
+                content: 'partial-daily-home'
             }
         });
     })
     //console.log(test);
 
-router.post('/', async function(req, res, next) {
+router.post('/expenses', async function(req, res, next) {
     const { category, description, expense } = req.body;
     monthlyModel.addExpense(category, description, expense)
     .then(async () => {
-        //res.redirect(`/daily`);
-        const test = await monthlyModel.getTotalDailyExpense()
-        await monthlyModel.subtractFromBalance(test.total)
+        //res.redirect(`/daily/expenses`);
+        const test = await monthlyModel.getTotalDailyExpense();
+        await monthlyModel.subtractFromBalance(test.total);
         const test2 = await monthlyModel.getRemainingBalance();
+        const listOfExpenses = await monthlyModel.getListOfExpenses();
 
         res.render('template', {
             locals: {
                 title: `Welcome to my dungeon`,//${req.session.first_name}`,
                 expenseList: test,
-                balance: test2
+                balance: test2,
+                listOfExpenses: listOfExpenses
                 // booksList: allBooks,
                 // is_logged_in: req.session.is_logged_in,
                 // userName: req.session.first_name,

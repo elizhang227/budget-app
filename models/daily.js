@@ -19,6 +19,17 @@ class Monthly {
         }
     }
 
+    static async getListOfExpenses() {
+        try {
+            const response = await db.any(`
+            SELECT daily_category, description, daily_expense
+            FROM daily`);
+            return response;
+        } catch(err) {
+            return err.message;
+        }
+    }
+
     static async getTotalDailyExpense() {
         try {
             const response = await db.one(`
