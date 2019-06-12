@@ -21,9 +21,32 @@ class Monthly {
 
     static async getTotalDailyExpense() {
         try {
-            const response = `
+            const response = await db.one(`
             SELECT sum (daily_expense) as total
-            FROM daily`;
+            FROM daily`);
+            console.log("this is the response", response);
+            return response;
+        } catch(err) {
+            return err.message
+        }
+    }
+
+    static async subtractFromBalance(expense) {
+        try {
+            const response = await db.one(`
+            update budget
+            set alloted_budget = alloted_budget - ${expense}`);
+            return response;
+        } catch(err) {
+            return err.message
+        }
+    }
+
+    static async getRemainingBalance() {
+        try {
+            const response = await db.one(`
+            select alloted_budget
+            from budget`);
             return response;
         } catch(err) {
             return err.message
