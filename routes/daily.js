@@ -4,28 +4,21 @@ const express = require('express'),
     //monthlyController = require('../controllers/monthly');
 
 router.get('/', async function(req, res, next) {
-    // const test = await monthlyModel.getTotalDailyExpense();
-    // await monthlyModel.subtractFromBalance(test.total)
-    // .then(async () => {
-    //     // await monthlyModel.subtractFromBalance(test);
-    //     const test2 = await monthlyModel.getRemainingBalance();
-
-        res.render('template', {
-            locals: {
-                title: `Welcome to my dungeon`//${req.session.first_name}`,
-                // expenseList: test,
-                // balance: test2
-                // booksList: allBooks,
-                // is_logged_in: req.session.is_logged_in,
-                // userName: req.session.first_name,
-                // email: req.session.email
-            },
-            partials: {
-                content: 'partial-daily-home'
-            }
-        });
-    })
-    //console.log(test);
+    res.render('template', {
+        locals: {
+            title: `Welcome to my dungeon`//${req.session.first_name}`,
+            // expenseList: test,
+            // balance: test2
+            // booksList: allBooks,
+            // is_logged_in: req.session.is_logged_in,
+            // userName: req.session.first_name,
+            // email: req.session.email
+        },
+        partials: {
+            content: 'partial-daily-home'
+        }
+    });
+});
 
 router.post('/expenses', async function(req, res, next) {
     const { category, description, expense } = req.body;
@@ -39,11 +32,10 @@ router.post('/expenses', async function(req, res, next) {
 
         res.render('template', {
             locals: {
-                title: `Welcome to my dungeon`,//${req.session.first_name}`,
+                title: `Daily Expense Breakdown`,//${req.session.first_name}`,
                 expenseList: test,
                 balance: test2,
                 listOfExpenses: listOfExpenses
-                // booksList: allBooks,
                 // is_logged_in: req.session.is_logged_in,
                 // userName: req.session.first_name,
                 // email: req.session.email

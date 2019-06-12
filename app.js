@@ -7,9 +7,10 @@ const express = require('express'),
 
 const indexRouter = require('./routes/index'),
     dailyRouter = require('./routes/daily'),
+    setupRouter = require('./routes/setup'),
     usersRouter = require('./routes/users');
 
-var app = express();
+const app = express();
 
 app.engine('html', es6Renderer);
 app.set('views', './views');
@@ -30,5 +31,6 @@ app.use(session({
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/daily', dailyRouter);
+app.use('/setup', setupRouter);
 
 module.exports = app;
