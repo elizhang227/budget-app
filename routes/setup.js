@@ -5,7 +5,9 @@ const express = require('express'),
 router.get('/', async function(req, res, next) {
     res.render('template', {
         locals: {
-            title: `Welcome to my dungeon`//${req.session.first_name}`
+            title: `Welcome to my dungeon`,//${req.session.first_name}`,
+            is_logged_in: req.session.is_logged_in,
+            userName: req.session.first_name
             // booksList: allBooks,
             // is_logged_in: req.session.is_logged_in,
             // userName: req.session.first_name,

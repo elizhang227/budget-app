@@ -8,7 +8,9 @@ router.get('/', async (req, res, next) => {
   res.render('template', {
     locals: {
       title: 'User Page',
-      userList: allUsers
+      userList: allUsers,
+      is_logged_in: req.session.is_logged_in,
+      userName: req.session.first_name
     },
     partials: {
       content: 'partial-users',
@@ -20,6 +22,8 @@ router.get('/login', async (req, res) => {
   res.render('template', {
     locals: {
       title: 'Login Page',
+      is_logged_in: req.session.is_logged_in,
+      userName: req.session.first_name
     },
     partials: {
       content: 'partial-login-form',
@@ -27,10 +31,17 @@ router.get('/login', async (req, res) => {
   });
 });
 
+router.get('/logout', async (req, res) => {
+  req.session.destroy();
+  res.redirect('/');
+});
+
 router.get('/signup', async (req, res) => {
   res.render('template', {
     locals: {
       title: 'Signup Page',
+      is_logged_in: req.session.is_logged_in,
+      userName: req.session.first_name
     },
     partials: {
       content: 'partial-signup-form',
@@ -42,6 +53,8 @@ router.get('/forgot-password', async (req, res) => {
   res.render('template', {
     locals: {
       title: 'Signup Page',
+      is_logged_in: req.session.is_logged_in,
+      userName: req.session.first_name
     },
     partials: {
       content: 'partial-forgot-password',
