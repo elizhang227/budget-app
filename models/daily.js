@@ -5,12 +5,12 @@ class Monthly {
         this.id = id;
     }
 
-    static async addExpense(category, expense) {
+    static async addExpense(category, description, expense) {
         const query = `
         INSERT INTO daily
-            (daily_category, daily_expense)
+            (daily_category, description, daily_expense)
         VALUES
-            ('${category}', ${expense})`;
+            ('${category}', '${description}', ${expense})`;
         try {
             let response = await db.result(query);
             return response;

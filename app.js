@@ -6,7 +6,7 @@ const express = require('express'),
     logger = require('morgan');
 
 const indexRouter = require('./routes/index'),
-    monthlyRouter = require('./routes/monthly'),
+    dailyRouter = require('./routes/daily'),
     usersRouter = require('./routes/users');
 
 var app = express();
@@ -29,6 +29,6 @@ app.use(session({
 }));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/monthly', monthlyRouter);
+app.use('/daily', dailyRouter);
 
 module.exports = app;

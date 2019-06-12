@@ -1,0 +1,20 @@
+<p>Total Daily Expense: $${expenseList.total}</p>
+<p>Remaining Balance: $${balance.alloted_budget}</p>
+
+<section class="section">
+    <p><b>Add Expense</b></p>
+    <form action="/daily" method="POST">
+            <label><b>Category:</b>
+                <input type="text" name="category"/>
+            </label>
+            <label><b>Description:</b>
+                <input type="text" name="description"/>
+            </label>
+            <label><b>Expense:</b>
+                <input type="text" name="expense"/>
+            </label>
+        <div class="button">
+            <button type="submit">Add Expense</button>
+        </div>
+    </form>
+</section>
