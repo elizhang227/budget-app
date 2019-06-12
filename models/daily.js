@@ -53,11 +53,24 @@ class Daily {
         }
     }
 
-    static async getRemainingBalance() {
+    static async getUser(email) {
+        try {
+            const response = await db.one(`
+            select id 
+            from users 
+            where email='${email}'`);
+            return response;
+        } catch(err) {
+            return err.message
+        }
+    }
+
+    static async getRemainingBalance(id) {
         try {
             const response = await db.one(`
             select alloted_budget
-            from budget`);
+            from budget
+            where budget_id=${id}`);
             return response;
         } catch(err) {
             return err.message

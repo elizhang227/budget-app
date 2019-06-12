@@ -4,7 +4,8 @@ const express = require('express'),
     //monthlyController = require('../controllers/monthly');
 
 router.get('/', async function(req, res, next) {
-    const balance = await monthlyModel.getRemainingBalance();
+    const id = await monthlyModel.getUser(req.session.email);
+    const balance = await monthlyModel.getRemainingBalance(id.id);
     //console.log("this is the balance", balance);
     res.render('template', {
         locals: {
