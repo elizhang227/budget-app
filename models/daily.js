@@ -1,6 +1,6 @@
 const db = require('./conn.js');
 
-class Monthly {
+class Daily {
     constructor(id){
         this.id = id;
     }
@@ -66,4 +66,4 @@ class Monthly {
 
 }
 
-module.exports = Monthly;
+module.exports = Daily;

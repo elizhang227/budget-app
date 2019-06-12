@@ -1,6 +1,6 @@
 const express = require('express'),
     router = express.Router(),
-    monthlyModel = require('../models/daily');
+    setupModel = require('../models/setup');
 
 router.get('/', async function(req, res, next) {
     res.render('template', {
@@ -16,5 +16,13 @@ router.get('/', async function(req, res, next) {
         }
     })
 })
+
+router.post('/', async function(req, res, next) {
+    const { budget } = req.body;
+    setupModel.setBudget(budget)
+    .then(() => {
+        res.redirect('../daily');
+    })
+});
 
 module.exports = router;
