@@ -8,9 +8,9 @@ router.get('/', async function(req, res, next) {
             locals: {
                 title: `Welcome to my dungeon`,//${req.session.first_name}`,
                 is_logged_in: req.session.is_logged_in,
-                userName: req.session.first_name
+                userName: req.session.first_name,
                 // booksList: allBooks,
-                // email: req.session.email
+                email: req.session.email
             },
             partials: {
                 content: 'partial-setup'
@@ -24,7 +24,9 @@ router.get('/', async function(req, res, next) {
 
 router.post('/', async function(req, res, next) {
     const { budget } = req.body;
-    setupModel.setBudget(budget)
+    console.log("this is email", req.session.email);
+    const userID = await setupModel.getUser(req.session.email);
+    setupModel.setBudget(budget, userID.id)
     .then(() => {
         res.redirect('../daily');
     })

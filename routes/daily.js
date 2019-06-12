@@ -9,13 +9,10 @@ router.get('/', async function(req, res, next) {
     res.render('template', {
         locals: {
             title: `Welcome to my dungeon`,//${req.session.first_name}`,
-            balance: balance
-            // expenseList: test,
-            // balance: test2
-            // booksList: allBooks,
-            // is_logged_in: req.session.is_logged_in,
-            // userName: req.session.first_name,
-            // email: req.session.email
+            balance: balance,
+            is_logged_in: req.session.is_logged_in,
+            userName: req.session.first_name,
+            email: req.session.email
         },
         partials: {
             content: 'partial-daily-home'
@@ -38,10 +35,10 @@ router.post('/expenses', async function(req, res, next) {
                 title: `Daily Expense Breakdown`,//${req.session.first_name}`,
                 expenseList: test,
                 balance: test2,
-                listOfExpenses: listOfExpenses
-                // is_logged_in: req.session.is_logged_in,
-                // userName: req.session.first_name,
-                // email: req.session.email
+                listOfExpenses: listOfExpenses,
+                is_logged_in: req.session.is_logged_in,
+                userName: req.session.first_name,
+                email: req.session.email
             },
             partials: {
                 content: 'partial-daily'

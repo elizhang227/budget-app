@@ -10,7 +10,8 @@ router.get('/', async (req, res, next) => {
       title: 'User Page',
       userList: allUsers,
       is_logged_in: req.session.is_logged_in,
-      userName: req.session.first_name
+      userName: req.session.first_name,
+      email: req.session.email
     },
     partials: {
       content: 'partial-users',
@@ -23,7 +24,8 @@ router.get('/login', async (req, res) => {
     locals: {
       title: 'Login Page',
       is_logged_in: req.session.is_logged_in,
-      userName: req.session.first_name
+      userName: req.session.first_name,
+      email: req.session.email
     },
     partials: {
       content: 'partial-login-form',
@@ -41,7 +43,8 @@ router.get('/signup', async (req, res) => {
     locals: {
       title: 'Signup Page',
       is_logged_in: req.session.is_logged_in,
-      userName: req.session.first_name
+      userName: req.session.first_name,
+      email: req.session.email
     },
     partials: {
       content: 'partial-signup-form',
@@ -54,7 +57,8 @@ router.get('/forgot-password', async (req, res) => {
     locals: {
       title: 'Signup Page',
       is_logged_in: req.session.is_logged_in,
-      userName: req.session.first_name
+      userName: req.session.first_name,
+      email: req.session.email
     },
     partials: {
       content: 'partial-forgot-password',
