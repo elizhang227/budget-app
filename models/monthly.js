@@ -19,6 +19,17 @@ class Monthly {
         }
     }
 
+    static async getTotalDailyExpense() {
+        try {
+            const response = `
+            SELECT sum (daily_expense) as total
+            FROM daily`;
+            return response;
+        } catch(err) {
+            return err.message
+        }
+    }
+
 }
 
 module.exports = Monthly;
