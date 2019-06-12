@@ -26,4 +26,28 @@ router.get('/login', async (req, res) => {
   });
 });
 
+router.get('/signup', async (req, res) => {
+  res.render('template', {
+    locals: {
+      title: 'Signup Page',
+    },
+    partials: {
+      content: 'partial-signup-form',
+    }
+  });
+});
+
+router.get('/forgot-password', async (req, res) => {
+  res.render('template', {
+    locals: {
+      title: 'Signup Page',
+    },
+    partials: {
+      content: 'partial-forgot-password',
+    }
+  });
+});
+
+
+
 module.exports = router;

@@ -52,7 +52,7 @@ class Monthly {
             return err.message
         }
     }
-
+    
 }
 
 module.exports = Monthly;

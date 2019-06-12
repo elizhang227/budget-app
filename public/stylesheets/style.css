@@ -6,12 +6,60 @@ body {
 
 a {
   color: #00B7FF;
+
 }
 
+
 .container--login {
+  margin: 0 25%;
   padding: 30px;
   background-color: white;
   -moz-box-shadow: 0 0 3px #ccc;
   -webkit-box-shadow: 0 0 3px #ccc;
   box-shadow: 0 0 3px #ccc;
+}
+
+.login--title {
+  padding-bottom: 2rem;
+}
+
+.login--form input {
+  height: 2.5rem;
+  width: 25rem;
+  border-width: 2px;
+}
+
+.signin-button {
+  width: 20rem;
+}
+
+.landing-page {
+  margin-top: 10rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "divOne divTwo";
+}
+
+.divOne {
+  grid-area: divOne;
+}
+
+.divOne h1{
+  font-size: 3.9rem;
+  font-weight: bold;
+  line-height: 4.5rem;
+  padding-bottom: 1.3rem;
+}
+
+.divOne button {
+  font-size: 1rem;
+  width: 15rem;
+  height: 3rem;
+  background-color: #ff8246;
+  margin-top: 1rem;
+}
+
+.divTwo {
+  grid-area: divTwo;
 }
