@@ -6,11 +6,11 @@ const express = require('express'),
     logger = require('morgan');
 
 const indexRouter = require('./routes/index'),
+    usersRouter = require('./routes/users'),
     dailyRouter = require('./routes/daily'),
-    setupRouter = require('./routes/setup'),
-    usersRouter = require('./routes/users');
+    setupRouter = require('./routes/setup');
 
-const app = express();
+var app = express();
 
 app.engine('html', es6Renderer);
 app.set('views', './views');
@@ -28,6 +28,7 @@ app.use(session({
     saveUninitialized: true,
     is_logged_in: false
 }));
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/daily', dailyRouter);
