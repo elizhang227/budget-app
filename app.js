@@ -21,12 +21,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use(session({
-//     secret: 'get rad',
-//     resave: false,
-//     saveUninitialized: true,
-//     is_logged_in: false
-// }));
+app.use(session({
+    secret: 'get rad',
+    resave: false,
+    saveUninitialized: true,
+    is_logged_in: false
+}));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/monthly', monthlyRouter);

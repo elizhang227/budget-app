@@ -7,10 +7,21 @@ router.get('/', async (req, res, next) => {
   res.render('template', {
     locals: {
       title: 'User Page',
-      userList: allUsers //array response from  our async request to the getAll() method
+      userList: allUsers
     },
     partials: {
-      partial: 'partial-users',
+      content: 'partial-users',
+    }
+  });
+});
+
+router.get('/login', async (req, res) => {
+  res.render('template', {
+    locals: {
+      title: 'Login Page',
+    },
+    partials: {
+      content: 'partial-login-form',
     }
   });
 });
