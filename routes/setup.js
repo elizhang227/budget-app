@@ -1,6 +1,8 @@
 const express = require('express'),
     router = express.Router(),
-    setupModel = require('../models/setup');
+    setupModel = require('../models/setup'),
+    date = new Date(),
+    day = date.toLocaleDateString();
 
 router.get('/', async function(req, res, next) {
     if(!!req.session.is_logged_in) {
@@ -10,7 +12,8 @@ router.get('/', async function(req, res, next) {
                 is_logged_in: req.session.is_logged_in,
                 userName: req.session.first_name,
                 // booksList: allBooks,
-                email: req.session.email
+                email: req.session.email,
+                date_day: day
             },
             partials: {
                 content: 'partial-setup'

@@ -98,6 +98,7 @@ a {
 }
 
 .landing-page-hero {
+  background-color: white;
   margin-left: 100px;
   -moz-box-shadow: 0 0 3px #ccc;
   -webkit-box-shadow: 0 0 3px #ccc;
@@ -122,6 +123,7 @@ a {
   grid-template-areas:
     "date detail price";
   margin: 10px 6%;
+
 }
 
 .list-item-date {
