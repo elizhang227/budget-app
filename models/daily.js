@@ -5,12 +5,12 @@ class Daily {
         this.id = id;
     }
 
-    static async addExpense(category, description, expense, daily_id) {
+    static async addExpense(category, description, expense, timestamp, daily_id) {
         const query = `
         INSERT INTO daily
-            (daily_category, description, daily_expense, daily_id)
+            (daily_category, description, daily_expense, daily_timestamp, daily_id)
         VALUES
-            ('${category}', '${description}', ${expense}, ${daily_id})`;
+            ('${category}', '${description}', ${expense}, '${timestamp}', ${daily_id})`;
         try {
             let response = await db.result(query);
             return response;
@@ -22,7 +22,7 @@ class Daily {
     static async getListOfExpenses(id) {
         try {
             const response = await db.any(`
-            SELECT daily_category, description, daily_expense
+            SELECT daily_category, description, daily_expense, daily_timestamp
             FROM daily
             where daily_id=${id}`);
             return response;

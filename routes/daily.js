@@ -38,7 +38,7 @@ router.get('/expenses', async (req, res, next) => {
         console.log("this is the currentDate", currentDate);
 
         let test2;
-        if ('June 20, 2019 2:11 PM' === refreshTime.reset_time) {
+        if (currentDate === refreshTime.reset_time) { //'June 20, 2019 2:11 PM'
             test2 = {'alloted_budget' : refreshTime.set_budget};
         } else {
             test2 = await monthlyModel.getRemainingBalance(id.id);
@@ -66,19 +66,20 @@ router.get('/expenses', async (req, res, next) => {
 
 router.post('/expenses', async function(req, res, next) {
     const { category, description, expense } = req.body;
-    const id = await monthlyModel.getUser(req.session.email)
-    monthlyModel.addExpense(category, description, expense, id.id)
+    const id = await monthlyModel.getUser(req.session.email);
+    const timestamp = moment().format('LLL')
+    monthlyModel.addExpense(category, description, expense, timestamp, id.id)
     .then(async () => {
         //res.redirect(`/daily/expenses`);
         const test = await monthlyModel.getTotalDailyExpense(id.id);
-        await monthlyModel.subtractFromBalance(test.total, id.id);
+        await monthlyModel.subtractFromBalance(expense, id.id);
         const refreshTime = await monthlyModel.getTimestamp(id.id);
         console.log("this is the refreshTime", refreshTime.reset_time);
         const currentDate = moment().format('LLL');
         console.log("this is the currentDate", currentDate);
 
         let test2;
-        if ('June 20, 2019 2:12 PM' === refreshTime.reset_time) {
+        if ('June 20, 2019 2:11 PM' === refreshTime.reset_time) {
             test2 = {'alloted_budget' : refreshTime.set_budget};
         } else {
             test2 = await monthlyModel.getRemainingBalance(id.id);
