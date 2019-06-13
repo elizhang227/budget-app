@@ -15,6 +15,7 @@ create table daily
     daily_category text,
     description text,
     daily_expense float,
+    daily_timestamp varchar(200),
     daily_id integer references users(id)
 );
 
