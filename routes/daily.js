@@ -13,7 +13,8 @@ router.get('/', async function(req, res, next) {
                 balance: balance,
                 is_logged_in: req.session.is_logged_in,
                 userName: req.session.first_name,
-                email: req.session.email
+                email: req.session.email,
+                date: moment().format('ll')
             },
             partials: {
                 content: 'partial-daily-home'

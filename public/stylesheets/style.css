@@ -167,7 +167,7 @@ a {
 }
 
 .add-modify-budget button {
-  border-radius: 100%;
+  border: none;
   color:red;
   font-size: 1.75rem;
   margin-left: 10px;
@@ -184,6 +184,7 @@ a {
 }
 
 .expense-section {
+  margin: 0;
   display:grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
@@ -197,6 +198,7 @@ a {
   font-size: 1.5rem;
   grid-area: expense;
   max-width: 400px;
+  max-height: 150px;
   -moz-box-shadow: 0 0 3px #ccc;
   padding: 20px;
   -webkit-box-shadow: 0 0 3px #ccc;
