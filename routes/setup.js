@@ -28,12 +28,16 @@ router.post('/', async function(req, res, next) {
     const check = await setupModel.budgetExists(userID.id);
     if(check.alloted_budget === null) {
         const { budget } = req.body;
-        //console.log("this is email", req.session.email);
-        //const userID = await setupModel.getUser(req.session.email);
-        setupModel.setBudget(budget, userID.id)
+        setupModel.setBudget(budget, check)
         .then(() => {
             res.redirect('../daily/expenses');
         });
+    } else if (typeof check.alloted_budget != 'object') {
+        const { budget } = req.body;
+        setupModel.setBudget(budget, userID.id)
+        .then(() => {
+            res.redirect('../daily/expenses');
+        })
     } else {
         const { budget } = req.body;
         setupModel.updateBudget(budget, userID.id)
