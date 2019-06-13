@@ -5,7 +5,7 @@ class Setup {
         this.id = id;
     }
 
-    static async setBudget(budget, budget_id) {
+    static async setBudget(budget, budget_id, timestamp) {
         try {
             const response = await db.one(`
             INSERT INTO budget
@@ -19,6 +19,19 @@ class Setup {
         }
     }
 
+    static async budgetTimestamp(budget, timestamp, reset_id) {
+        try {
+            const response = await db.one(`
+            INSERT INTO budget_timestamp
+                (set_budget, timestamp, reset_id)
+            VALUES
+                (${budget}, '${timestamp}, ${reset_id})
+            `);
+            return response;
+        } catch(err) {
+            return err.message;
+        }
+    }
 
     static async budgetExists(id) {
         try {
