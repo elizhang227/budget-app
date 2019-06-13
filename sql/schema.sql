@@ -18,12 +18,12 @@ create table daily
     daily_id integer references users(id)
 );
 
-create table monthly
+create table budget_timestamp
 (
     id serial primary key,
-    monthly_category text,
-    monthly_expense float,
-    monthly_id integer references users(id)
+    set_budget float,
+    timestamp varchar(200),
+    reset_id integer references users(id)
 );
 
 create table budget

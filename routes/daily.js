@@ -26,7 +26,11 @@ router.get('/', async function(req, res, next) {
 router.get('/expenses', async (req, res, next) => {
     if(!!req.session.is_logged_in) {
         const id = await monthlyModel.getUser(req.session.email);
-        const test = await monthlyModel.getTotalDailyExpense(id.id);
+        let test = await monthlyModel.getTotalDailyExpense(id.id);
+        console.log("this is the test for expenses", test);
+        if (test.total === null) {
+            test.total = 0;
+        }
         const test2 = await monthlyModel.getRemainingBalance(id.id);
         const listOfExpenses = await monthlyModel.getListOfExpenses(id.id);
         res.render('template', {

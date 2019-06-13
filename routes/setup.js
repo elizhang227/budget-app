@@ -26,13 +26,31 @@ router.get('/', async function(req, res, next) {
 })
 
 router.post('/', async function(req, res, next) {
-    const { budget } = req.body;
-    console.log("this is email", req.session.email);
+    //if budget Exists then run updateBudget, else run setBudget
     const userID = await setupModel.getUser(req.session.email);
-    setupModel.setBudget(budget, userID.id)
-    .then(() => {
-        res.redirect('../daily');
-    })
+    const check = await setupModel.budgetExists(userID.id);
+    //const date = moment().
+    if(check.alloted_budget === null) {
+        const { budget } = req.body;
+        setupModel.setBudget(budget, check)
+        .then(() => {
+            res.redirect('../daily/expenses');
+        });
+        setupModel.budgetTimestamp(budget, , check)
+    } else if (typeof check.alloted_budget != 'object') {
+        const { budget } = req.body;
+        setupModel.setBudget(budget, userID.id)
+        .then(() => {
+            res.redirect('../daily/expenses');
+        })
+    } else {
+        const { budget } = req.body;
+        setupModel.updateBudget(budget, userID.id)
+        .then(() => {
+            res.redirect('../daily/expenses');
+        });
+    }
+
 });
 
 module.exports = router;
