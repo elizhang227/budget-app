@@ -1,22 +1,55 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: #f6f6f6;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 50px;
 }
 
 a {
   color: #00B7FF;
-
 }
 
-
 .container--login {
-  margin: 0 25%;
-  padding: 30px;
   background-color: white;
+  box-shadow: 0 0 3px #ccc;
+  font-family: 'Dosis', sans-serif;
+  margin: 60px 25% 0;
+  padding: 30px;
   -moz-box-shadow: 0 0 3px #ccc;
   -webkit-box-shadow: 0 0 3px #ccc;
+}
+
+.a-pw-forget {
+  display: flex;
+  justify-content: center;
+}
+
+.container--login h4 {
+  text-align: center;
+}
+
+.container--signup {
+  background-color: white;
   box-shadow: 0 0 3px #ccc;
+  font-family: 'Dosis', sans-serif;
+  margin: 60px 25% 0;
+  padding: 30px;
+  -moz-box-shadow: 0 0 3px #ccc;
+  -webkit-box-shadow: 0 0 3px #ccc;
+}
+
+.container--signup input {
+  border-width: 2px;
+  height: 2.5rem;
+  width: 100%;
+}
+
+.container--signup button {
+  width: 100%;
+}
+
+.container--signup a {
+  display: flex;
+  justify-content: center;
 }
 
 .login--title {
@@ -24,21 +57,21 @@ a {
 }
 
 .login--form input {
-  height: 2.5rem;
-  width: 25rem;
   border-width: 2px;
+  height: 2.5rem;
+  width: 100%;
 }
 
 .signin-button {
-  width: 20rem;
+  width: 100%;
 }
 
 .landing-page {
-  margin-top: 10rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
     "divOne divTwo";
+  margin: 7rem 8%;
 }
 
 .divOne {
@@ -53,13 +86,69 @@ a {
 }
 
 .divOne button {
-  font-size: 1rem;
-  width: 15rem;
-  height: 3rem;
   background-color: #ff8246;
+  font-size: 1rem;
+  height: 3rem;
   margin-top: 1rem;
+  width: 15rem;
 }
 
 .divTwo {
   grid-area: divTwo;
+}
+
+.landing-page-hero {
+  margin-left: 100px;
+  -moz-box-shadow: 0 0 3px #ccc;
+  -webkit-box-shadow: 0 0 3px #ccc;
+}
+
+.landing-page-hero h4 {
+  color: #5588a3;
+  font-family: 'Noto Sans HK', sans-serif;
+  font-size: 1.3rem;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  margin-left: 40px;
+}
+
+.hero-item {
+  border: 2px solid #ffa45c;
+  border-radius: 100px;
+  box-shadow: 0 0 1pt 1pt #7189bf;
+  display: grid;
+  grid-template-columns: 20% 50% 30%;
+  grid-template-rows: 3rem;
+  grid-template-areas:
+    "date detail price";
+  margin: 10px 6%;
+}
+
+.list-item-date {
+  grid-area: date;
+}
+
+.list-item-detail {
+  grid-area: detail;
+}
+
+.list-item-price {
+  grid-area: price;
+}
+
+.p-date {
+  text-align: center;
+}
+
+@media only screen and (max-width:895px) {
+  .landing-page {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 410px 500px;
+    grid-template-areas:
+      "divOne"
+      "divTwo";
+    margin-left:20%;
+    margin-right:20%;
+  }
 }

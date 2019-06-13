@@ -1,20 +1,24 @@
-<form action="/users/signup" method="POST">
-    <label class="label">
-        First Name
-        <input type="text" name="first_name" placeholder="John" />
-    </label>
-    <label class="label">
-        Last Name
-        <input type="text" name="last_name" placeholder="Smith" />
-    </label>
-    <label class="label">
-        Email Address
-        <input type="text" name="email" placeholder="you@email.com" />
-    </label>
-    <label class="label">
-        Password
-        <input type="password" name="password" placeholder="Your Password" />
-    </label>
-    <button type="submit" class="button is-primary">Sign Up</button>
-</form>
-<a href="/users/login">Actually, I have an account</a>
+<section>
+  <div class="container--signup">
+    <form action="/users/signup" method="POST">
+        <label class="label">
+            <h3>First Name</h3>
+            <input type="text" name="first_name" placeholder="John" />
+        </label>
+        <label class="label">
+            <h3>Last Name</h3>
+            <input type="text" name="last_name" placeholder="Smith" />
+        </label>
+        <label class="label">
+            <h3>Email Address</h3>
+            <input type="text" name="email" placeholder="you@email.com" />
+        </label>
+        <label class="label">
+            <h3>Password</h3>
+            <input type="password" name="password" placeholder="Your Password" />
+        </label>
+        <button type="submit" class="button is-primary">Sign Up</button>
+    </form>
+    <a href="/users/login">Actually, I have an account</a>
+  </div>
+</section>
