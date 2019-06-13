@@ -1,35 +1,38 @@
 const express = require('express'),
     router = express.Router(),
     monthlyModel = require('../models/daily');
-    //monthlyController = require('../controllers/monthly');
 
 router.get('/', async function(req, res, next) {
-    const id = await monthlyModel.getUser(req.session.email);
-    const balance = await monthlyModel.getRemainingBalance(id.id);
-    //console.log("this is the balance", balance);
-    res.render('template', {
-        locals: {
-            title: `Welcome to my dungeon`,//${req.session.first_name}`,
-            balance: balance,
-            is_logged_in: req.session.is_logged_in,
-            userName: req.session.first_name,
-            email: req.session.email
-        },
-        partials: {
-            content: 'partial-daily-home'
-        }
-    });
+    if(!!req.session.is_logged_in) {
+        const id = await monthlyModel.getUser(req.session.email);
+        const balance = await monthlyModel.getRemainingBalance(id.id);
+        res.render('template', {
+            locals: {
+                title: `Welcome to my dungeon`,//${req.session.first_name}`,
+                balance: balance,
+                is_logged_in: req.session.is_logged_in,
+                userName: req.session.first_name,
+                email: req.session.email
+            },
+            partials: {
+                content: 'partial-daily-home'
+            }
+        });
+    } else {
+        res.redirect('/users/login');
+    }
 });
 
 router.post('/expenses', async function(req, res, next) {
     const { category, description, expense } = req.body;
-    monthlyModel.addExpense(category, description, expense)
+    const id = await monthlyModel.getUser(req.session.email)
+    monthlyModel.addExpense(category, description, expense, id.id)
     .then(async () => {
         //res.redirect(`/daily/expenses`);
-        const test = await monthlyModel.getTotalDailyExpense();
-        await monthlyModel.subtractFromBalance(test.total);
-        const test2 = await monthlyModel.getRemainingBalance();
-        const listOfExpenses = await monthlyModel.getListOfExpenses();
+        const test = await monthlyModel.getTotalDailyExpense(id.id);
+        await monthlyModel.subtractFromBalance(test.total, id.id);
+        const test2 = await monthlyModel.getRemainingBalance(id.id);
+        const listOfExpenses = await monthlyModel.getListOfExpenses(id.id);
 
         res.render('template', {
             locals: {

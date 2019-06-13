@@ -5,12 +5,12 @@ class Daily {
         this.id = id;
     }
 
-    static async addExpense(category, description, expense) {
+    static async addExpense(category, description, expense, daily_id) {
         const query = `
         INSERT INTO daily
-            (daily_category, description, daily_expense)
+            (daily_category, description, daily_expense, daily_id)
         VALUES
-            ('${category}', '${description}', ${expense})`;
+            ('${category}', '${description}', ${expense}, ${daily_id})`;
         try {
             let response = await db.result(query);
             return response;
@@ -19,22 +19,24 @@ class Daily {
         }
     }
 
-    static async getListOfExpenses() {
+    static async getListOfExpenses(id) {
         try {
             const response = await db.any(`
             SELECT daily_category, description, daily_expense
-            FROM daily`);
+            FROM daily
+            where daily_id=${id}`);
             return response;
         } catch(err) {
             return err.message;
         }
     }
 
-    static async getTotalDailyExpense() {
+    static async getTotalDailyExpense(id) {
         try {
             const response = await db.one(`
             SELECT sum (daily_expense) as total
-            FROM daily`);
+            FROM daily
+            where daily_id=${id}`);
             console.log("this is the response", response);
             return response;
         } catch(err) {
@@ -42,11 +44,12 @@ class Daily {
         }
     }
 
-    static async subtractFromBalance(expense) {
+    static async subtractFromBalance(expense, id) {
         try {
             const response = await db.one(`
             update budget
-            set alloted_budget = alloted_budget - ${expense}`);
+            set alloted_budget = alloted_budget - ${expense}
+            where budget_id=${id}`);
             return response;
         } catch(err) {
             return err.message
