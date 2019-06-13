@@ -23,6 +23,31 @@ router.get('/', async function(req, res, next) {
     }
 });
 
+router.get('/expenses', async (req, res, next) => {
+    if(!!req.session.is_logged_in) {
+        const id = await monthlyModel.getUser(req.session.email);
+        const test = await monthlyModel.getTotalDailyExpense(id.id);
+        const test2 = await monthlyModel.getRemainingBalance(id.id);
+        const listOfExpenses = await monthlyModel.getListOfExpenses(id.id);
+        res.render('template', {
+            locals: {
+                title: `Welcome to my dungeon`,//${req.session.first_name}`,
+                listOfExpenses: listOfExpenses,
+                expenseList: test,
+                balance: test2,
+                is_logged_in: req.session.is_logged_in,
+                userName: req.session.first_name,
+                email: req.session.email
+            },
+            partials: {
+                content: 'partial-daily'
+            }
+        });
+    } else {
+        res.redirect('/users/login');
+    }
+})
+
 router.post('/expenses', async function(req, res, next) {
     const { category, description, expense } = req.body;
     const id = await monthlyModel.getUser(req.session.email)
