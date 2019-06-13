@@ -19,6 +19,32 @@ class Setup {
         }
     }
 
+
+    static async budgetExists(id) {
+        try {
+            const response = await db.one(`
+            SELECT alloted_budget
+            FROM budget
+            WHERE budget_id=${id}`);
+            console.log("this is the response of budget", response);
+            return response;
+        } catch(err) {
+            return err.message;
+        }
+    }
+
+    static async updateBudget(budget, budget_id) {
+        try {
+            const response = await db.one(`
+            update budget
+            set alloted_budget=${budget}
+            where budget_id=${budget_id}`);
+            return response;
+        } catch(err) {
+            return err.message;
+        }
+    }
+
     static async getUser(email) {
         try {
             const response = await db.one(`
