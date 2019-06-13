@@ -1,23 +1,24 @@
-<p>Total Daily Expense: $${expenseList.total}</p>
-<p>Remaining Balance: $${balance.alloted_budget}</p>
-
-<section class="section">
-    <table class="table">
-        <thead>
-            <tr>
-                <td><b>Category</b></td>
-                <td><b>Description</b></td>
-                <td><b>Cost</b></td>
-            </tr>
-        </thead>
-        ${listOfExpenses.map(x =>
-                `<tr>
-                    <td><a href="">${x.daily_category}</a></td>
-                    <td>${x.description}</td>
-                    <td>${x.daily_expense}</td>
-                </tr>`
-            ).join('')}
-    </table>
+<section class="section expense-section">
+  <div class="div-expense">
+    <p>Total Daily Expense: $${expenseList.total}</p>
+    <p>Remaining Balance: $${balance.alloted_budget}</p>
+  </div>
+  <table class="table table-expense">
+      <thead>
+          <tr>
+              <td><b>Category</b></td>
+              <td><b>Description</b></td>
+              <td><b>Cost</b></td>
+          </tr>
+      </thead>
+      ${listOfExpenses.map(x =>
+              `<tr>
+                  <td><a href="">${x.daily_category}</a></td>
+                  <td>${x.description}</td>
+                  <td>${x.daily_expense}</td>
+              </tr>`
+          ).join('')}
+  </table>
 </section>
 
 <section class="section">

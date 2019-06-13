@@ -161,21 +161,49 @@ a {
 }
 
 .add-modify-budget input {
-  font-size: 2rem;
+  font-size: 1.5rem;
   width: 20%;
   height: 2rem;
 }
 
 .add-modify-budget button {
-  font-size: 1.5rem;
-  height: 1.95rem;
-  width: 60px;
-  border:none;
+  border-radius: 100%;
+  color:red;
+  font-size: 1.75rem;
+  margin-left: 10px;
+}
+
+.add-modify-budget button:hover {
+  color:green;
+  background-color: red;
 }
 
 .p-budget-amt {
   display: inline-block;
   margin-right: 50px;
+}
+
+.expense-section {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "expense table";
+}
+
+.div-expense {
+  background-color: white;
+  box-shadow: 0 0 3px #ccc;
+  font-size: 1.5rem;
+  grid-area: expense;
+  max-width: 400px;
+  -moz-box-shadow: 0 0 3px #ccc;
+  padding: 20px;
+  -webkit-box-shadow: 0 0 3px #ccc;
+}
+
+.table-expense {
+  grid-area:table;
 }
 
 @media only screen and (max-width:895px) {

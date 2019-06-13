@@ -36,7 +36,7 @@ router.post('/', async function(req, res, next) {
         .then(() => {
             res.redirect('../daily/expenses');
         });
-        setupModel.budgetTimestamp(budget, , check)
+        // setupModel.budgetTimestamp(budget,, check)
     } else if (typeof check.alloted_budget != 'object') {
         const { budget } = req.body;
         setupModel.setBudget(budget, userID.id)
