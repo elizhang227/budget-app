@@ -23,6 +23,7 @@ create table budget_timestamp
     id serial primary key,
     set_budget float,
     timestamp varchar(200),
+    reset_time varchar(200),
     reset_id integer references users(id)
 );
 

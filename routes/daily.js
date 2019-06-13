@@ -1,5 +1,6 @@
 const express = require('express'),
     router = express.Router(),
+    moment = require('moment'),
     monthlyModel = require('../models/daily');
 
 router.get('/', async function(req, res, next) {
@@ -31,7 +32,18 @@ router.get('/expenses', async (req, res, next) => {
         if (test.total === null) {
             test.total = 0;
         }
-        const test2 = await monthlyModel.getRemainingBalance(id.id);
+        const refreshTime = await monthlyModel.getTimestamp(id.id);
+        console.log("this is the refreshTime", refreshTime.reset_time);
+        const currentDate = moment().format('LLL');
+        console.log("this is the currentDate", currentDate);
+
+        let test2;
+        if ('June 20, 2019 2:11 PM' === refreshTime.reset_time) {
+            test2 = {'alloted_budget' : refreshTime.set_budget};
+        } else {
+            test2 = await monthlyModel.getRemainingBalance(id.id);
+        }
+        console.log("this is test2", test2);
         const listOfExpenses = await monthlyModel.getListOfExpenses(id.id);
         res.render('template', {
             locals: {
@@ -60,7 +72,19 @@ router.post('/expenses', async function(req, res, next) {
         //res.redirect(`/daily/expenses`);
         const test = await monthlyModel.getTotalDailyExpense(id.id);
         await monthlyModel.subtractFromBalance(test.total, id.id);
-        const test2 = await monthlyModel.getRemainingBalance(id.id);
+        const refreshTime = await monthlyModel.getTimestamp(id.id);
+        console.log("this is the refreshTime", refreshTime.reset_time);
+        const currentDate = moment().format('LLL');
+        console.log("this is the currentDate", currentDate);
+
+        let test2;
+        if ('June 20, 2019 2:12 PM' === refreshTime.reset_time) {
+            test2 = {'alloted_budget' : refreshTime.set_budget};
+        } else {
+            test2 = await monthlyModel.getRemainingBalance(id.id);
+        }
+        console.log("this is test2", test2);
+
         const listOfExpenses = await monthlyModel.getListOfExpenses(id.id);
 
         res.render('template', {

@@ -80,6 +80,18 @@ class Daily {
         }
     }
 
+    static async getTimestamp(id) {
+        try {
+            const response = await db.one(`
+            select set_budget, timestamp, reset_time
+            from budget_timestamp
+            where reset_id=${id}`);
+            return response;
+        } catch(err) {
+            return err.message;
+        }
+    }
+
 }
 
 module.exports = Daily;
