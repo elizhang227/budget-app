@@ -29,14 +29,14 @@ router.post('/', async function(req, res, next) {
     //if budget Exists then run updateBudget, else run setBudget
     const userID = await setupModel.getUser(req.session.email);
     const check = await setupModel.budgetExists(userID.id);
-    //const date = moment().
+    const date = moment().format('LLL');
     if(check.alloted_budget === null) {
         const { budget } = req.body;
-        setupModel.setBudget(budget, check)
+        setupModel.updateBudget(budget, userID.id)
         .then(() => {
             res.redirect('../daily/expenses');
         });
-        setupModel.budgetTimestamp(budget, , check)
+        setupModel.budgetTimestamp(budget, date, userID.id)
     } else if (typeof check.alloted_budget != 'object') {
         const { budget } = req.body;
         setupModel.setBudget(budget, userID.id)
