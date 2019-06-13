@@ -98,6 +98,7 @@ a {
 }
 
 .landing-page-hero {
+  background-color: white;
   margin-left: 100px;
   -moz-box-shadow: 0 0 3px #ccc;
   -webkit-box-shadow: 0 0 3px #ccc;
@@ -138,6 +139,43 @@ a {
 
 .p-date {
   text-align: center;
+}
+
+.p-setup {
+  text-align: center;
+}
+
+.add-modify-budget {
+  background-color: white;
+  box-shadow: 0 0 3px #ccc;
+  font-family: 'Dosis', sans-serif;
+  margin: 1rem 15%;
+  padding: 30px;
+  -moz-box-shadow: 0 0 3px #ccc;
+  -webkit-box-shadow: 0 0 3px #ccc;
+}
+
+.add-modify-budget p {
+  font-size: 1.5rem;
+  padding-bottom: 20px;
+}
+
+.add-modify-budget input {
+  font-size: 2rem;
+  width: 20%;
+  height: 2rem;
+}
+
+.add-modify-budget button {
+  font-size: 1.5rem;
+  height: 1.95rem;
+  width: 60px;
+  border:none;
+}
+
+.p-budget-amt {
+  display: inline-block;
+  margin-right: 50px;
 }
 
 @media only screen and (max-width:895px) {

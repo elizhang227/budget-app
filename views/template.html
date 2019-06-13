@@ -3,7 +3,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/stylesheets/style.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css"/>
-  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 <body>
   <nav class="navbar main-nav  is-dark" role="navigation" aria-label="main navigation">
@@ -22,14 +22,13 @@
     </div>
     <div class="navbar-end">
         <a class="navbar-item">Hello, ${userName}!</a>
-        <a class="navbar-item">${email}</a> 
         <a class="navbar-item" href='/users/logout'>Logout</a>
     ` : `
         <a class="navbar-item" href='/users/login'>Login</a>
     </div>
     `}
   </nav>
-  <h1 class="container">${title}</h1>
+  <!-- <h1 class="container">${title}</h1> -->
   <main class="container">${content}</main>
 </body>
 </html>
