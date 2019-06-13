@@ -96,12 +96,18 @@ router.post('/login', async (req, res) => {
   const isValid = bcrypt.compareSync(password, userData.password);
 
   if (!!isValid) {
-      req.session.is_logged_in = true;
-      req.session.email = userData.email;
-      req.session.first_name = userData.first_name;
-      req.session.last_name = userData.last_name;
-      req.session.user_id = userData.user_id;
+    req.session.is_logged_in = true;
+    req.session.email = userData.email;
+    req.session.first_name = userData.first_name;
+    req.session.last_name = userData.last_name;
+    req.session.user_id = userData.user_id;
+    const id = await UsersModel.getUser(req.session.email);
+    const check = await UsersModel.budgetExists(id.id);
+    if(check.alloted_budget != null) {
+      res.redirect('/daily/expenses');
+    } else {
       res.redirect('/setup');
+    }
   } else {
       res.redirect('/');
   }
