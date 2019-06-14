@@ -10,6 +10,7 @@
                 <td><b>Description</b></td>
                 <td><b>Cost</b></td>
                 <td><b>Timestamp</b></td>
+                <td><b>Percentage</b></td>
             </tr>
         </thead>
         ${listOfExpenses.map(x =>
@@ -18,6 +19,7 @@
                     <td>${x.description}</td>
                     <td>${x.daily_expense}</td>
                     <td>${x.daily_timestamp}</td>
+                    <td>${x.percentage}%</td>
                 </tr>`
             ).join('')}
     </table>

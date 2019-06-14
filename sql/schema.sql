@@ -19,6 +19,7 @@ create table daily
     description text,
     daily_expense float,
     daily_timestamp varchar(200),
+    percentage float,
     daily_id integer references users(id)
 );
 
