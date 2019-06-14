@@ -39,7 +39,7 @@ router.get('/expenses', async (req, res, next) => {
 
 
         let test2;
-        if ('June 20th 2019, 2:12:10 am' === refreshTime.reset_time) { //'June 20, 2019 2:11 PM'
+        if ('June 20th 2019, 2:12:11 am' === refreshTime.reset_time) { //'June 20, 2019 2:11 PM'
             await monthlyModel.resetBudget(refreshTime.set_budget, id.id)//{'alloted_budget' : refreshTime.set_budget};
             .then(async() => {
                 test2 = await monthlyModel.getRemainingBalance(id.id);
@@ -90,6 +90,29 @@ router.get('/history', async (req, res, next) => {
     }
 })
 
+router.get('/expenses/:category', async (req, res, next) => {
+    if(!!req.session.is_logged_in) {
+        const id = await monthlyModel.getUser(req.session.email);
+        console.log("this is the req params", req.params.category);
+        //const category = req.params.category;
+        const listOfExpenses = await monthlyModel.getCategoryExpense(id.id, req.params.category);
+        res.render('template', {
+            locals: {
+                title: `Welcome to my dungeon`,//${req.session.first_name}`,
+                listOfExpenses: listOfExpenses,
+                is_logged_in: req.session.is_logged_in,
+                userName: req.session.first_name,
+                email: req.session.email
+            },
+            partials: {
+                content: 'partial-expense-category'
+            }
+        });
+    } else {
+        res.redirect('/users/login');
+    }
+})
+
 router.post('/expenses', async function(req, res, next) {
     const { category, description, expense } = req.body;
     const id = await monthlyModel.getUser(req.session.email);
@@ -108,7 +131,7 @@ router.post('/expenses', async function(req, res, next) {
         await monthlyModel.subtractFromBalance(expense, id.id);
 
         let test2;
-        if ('June 20th 2019, 2:12:10 am' === refreshTime.reset_time) {
+        if ('June 20th 2019, 2:12:11 am' === refreshTime.reset_time) {
             await monthlyModel.resetBudget(refreshTime.set_budget, id.id)//{'alloted_budget' : refreshTime.set_budget};
             .then(async() => {
                 test2 = await monthlyModel.getRemainingBalance(id.id);

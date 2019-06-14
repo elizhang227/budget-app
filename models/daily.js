@@ -55,6 +55,18 @@ class Daily {
         }
     }
 
+    static async getCategoryExpense(id, category) {
+        try {
+            const response = await db.any(`
+            SELECT daily_category, description, daily_expense, daily_timestamp, percentage
+            FROM daily
+            where daily_id=${id} and daily_category='${category}'`);
+            return response;
+        } catch(err) {
+            return err.message;
+        }
+    }
+
     static async getTotalDailyExpense(id) { //, timestamp)
         try {
             const response = await db.one(`
