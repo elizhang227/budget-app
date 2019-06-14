@@ -38,13 +38,14 @@ router.post('/', async function(req, res, next) {
         .then(() => {
             res.redirect('../daily/expenses');
         });
-        setupModel.budgetTimestamp(budget, date, refresh, userID.id)
+        setupModel.budgetTimestamp(budget, date, refresh, userID.id);
     } else if (typeof check.alloted_budget != 'object') {
         const { budget } = req.body;
         setupModel.setBudget(budget, userID.id)
         .then(() => {
             res.redirect('../daily/expenses');
         })
+        setupModel.budgetTimestamp(budget, date, refresh, userID.id);
     } else {
         const { budget } = req.body;
         setupModel.updateBudget(budget, userID.id)
