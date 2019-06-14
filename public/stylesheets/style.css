@@ -208,6 +208,30 @@ a {
   grid-area:table;
 }
 
+.section-add-expense {
+  background-color: white;
+  font-size: 1.5rem;
+  -moz-box-shadow: 0 0 3px #ccc;
+  -webkit-box-shadow: 0 0 3px #ccc;
+}
+
+.section-add-expense input{
+  height: 1.3rem;
+}
+
+.p-expense {
+  color: #5588a3;
+  font-size: 1.5rem;
+  padding-bottom: 10px;
+}
+
+.expense-button {
+  background-color: #FFFFFF;
+  margin-left: 10px;
+  width: 100px;
+  height: 1.4rem;
+}
+
 @media only screen and (max-width:895px) {
   .landing-page {
     display: grid;
@@ -218,5 +242,11 @@ a {
       "divTwo";
     margin-left:20%;
     margin-right:20%;
+  }
+}
+
+@media only screen and (max-width:1024px) {
+  .nav-style {
+
   }
 }
