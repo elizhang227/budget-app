@@ -1,0 +1,19 @@
+<section class="section expense-section">
+        <table class="table table-expense">
+            <p><b>Category: ${listOfExpenses[0].daily_category}</b></p>
+            <thead>
+                <tr>
+                    <td><b>Description</b></td>
+                    <td><b>Cost</b></td>
+                    <td><b>Timestamp</b></td>
+                </tr>
+            </thead>
+            ${listOfExpenses.map(x =>
+                    `<tr>
+                        <td>${x.description}</td>
+                        <td>${x.daily_expense}</td>
+                        <td>${x.daily_timestamp}</td>
+                    </tr>`
+                ).join('')}
+        </table>
+    </section>    
