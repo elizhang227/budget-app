@@ -92,6 +92,18 @@ class Daily {
         }
     }
 
+    static async resetBudget(budget, id) {
+        try {
+            const response = await db.one(`
+            update budget
+            set alloted_budget=${budget}
+            where budget_id=${id}`);
+            return response;
+        } catch(err) {
+            return err.message;
+        }
+    }
+
 }
 
 module.exports = Daily;

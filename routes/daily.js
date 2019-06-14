@@ -39,8 +39,11 @@ router.get('/expenses', async (req, res, next) => {
         console.log("this is the currentDate", currentDate);
 
         let test2;
-        if (currentDate === refreshTime.reset_time) { //'June 20, 2019 2:11 PM'
-            test2 = {'alloted_budget' : refreshTime.set_budget};
+        if ('June 20, 2019 2:12 PM' === refreshTime.reset_time) { //'June 20, 2019 2:11 PM'
+            await monthlyModel.resetBudget(refreshTime.set_budget, id.id)//{'alloted_budget' : refreshTime.set_budget};
+            .then(async() => {
+                test2 = await monthlyModel.getRemainingBalance(id.id);
+            })
         } else {
             test2 = await monthlyModel.getRemainingBalance(id.id);
         }
