@@ -19,6 +19,16 @@ create table daily
     daily_id integer references users(id)
 );
 
+create table history
+(
+    id serial primary key,
+    history_category text,
+    description text,
+    history_expense float,
+    history_timestamp varchar(200),
+    history_id integer references users(id)
+);
+
 create table budget_timestamp
 (
     id serial primary key,

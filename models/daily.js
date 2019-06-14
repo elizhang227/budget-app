@@ -19,6 +19,30 @@ class Daily {
         }
     }
 
+    static async clearExpense() {
+        try {
+            const response = await db.one(`
+            delete from daily`);
+            return response;
+        } catch(err) {
+            return err.message;
+        }
+    }
+
+    static async addExpense2(category, description, expense, timestamp, history_id) {
+        const query = `
+        INSERT INTO history
+            (history_category, description, history_expense, history_timestamp, history_id)
+        VALUES
+            ('${category}', '${description}', ${expense}, '${timestamp}', ${history_id})`;
+        try {
+            let response = await db.result(query);
+            return response;
+        } catch(err) {
+            return err.message;
+        }
+    }
+
     static async getListOfExpenses(id) {
         try {
             const response = await db.any(`
@@ -31,7 +55,7 @@ class Daily {
         }
     }
 
-    static async getTotalDailyExpense(id) {
+    static async getTotalDailyExpense(id) { //, timestamp)
         try {
             const response = await db.one(`
             SELECT sum (daily_expense) as total
@@ -40,7 +64,19 @@ class Daily {
             console.log("this is the response", response);
             return response;
         } catch(err) {
-            return err.message
+            return err.message;
+        }
+    }
+
+    static async getHistoryOfExpenses(id) {
+        try {
+            const response = await db.any(`
+            select history_category, description, history_expense, history_timestamp
+            from history
+            where history_id=${id}`);
+            return response;
+        } catch(err) {
+            return err.message;
         }
     }
 
@@ -102,6 +138,10 @@ class Daily {
         } catch(err) {
             return err.message;
         }
+    }
+
+    static async resetExpense() {
+
     }
 
 }
