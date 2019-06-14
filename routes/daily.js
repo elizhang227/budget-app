@@ -13,8 +13,7 @@ router.get('/', async function(req, res, next) {
                 balance: balance,
                 is_logged_in: req.session.is_logged_in,
                 userName: req.session.first_name,
-                email: req.session.email,
-                date: moment().format('ll')
+                email: req.session.email
             },
             partials: {
                 content: 'partial-daily-home'
@@ -106,7 +105,7 @@ router.post('/expenses', async function(req, res, next) {
         console.log("this is the currentDate", currentDate);
 
         let test2;
-        if ('June 20th 2019, 2:12:11 am' === refreshTime.reset_time) {
+        if ('June 20th 2019, 2:12:10 am' === refreshTime.reset_time) {
             await monthlyModel.resetBudget(refreshTime.set_budget, id.id)//{'alloted_budget' : refreshTime.set_budget};
             .then(async() => {
                 test2 = await monthlyModel.getRemainingBalance(id.id);

@@ -23,8 +23,8 @@
     </table>
 </section>
 
-<section class="section">
-    <p><b>Add Expense</b></p>
+<section class="section section-add-expense">
+    <p class="p-expense"><b>Add Expense</b></p>
     <form action="/daily/expenses" method="POST">
             <label><b>Category:</b>
                 <input type="text" name="category"/>
@@ -35,8 +35,6 @@
             <label><b>Expense:</b>
                 <input type="text" name="expense"/>
             </label>
-        <div class="button">
-            <button type="submit">Add Expense</button>
-        </div>
+            <button class="expense-button" type="submit">Add Expense</button>
     </form>
 </section>

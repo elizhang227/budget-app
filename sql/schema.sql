@@ -1,5 +1,8 @@
 create database budget_app;
-
+drop table users;
+drop table daily;
+drop table budget_timestamp;
+drop table budget;
 create table users
 (
     id serial primary key,
