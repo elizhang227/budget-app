@@ -28,19 +28,15 @@ router.get('/expenses', async (req, res, next) => {
     if(!!req.session.is_logged_in) {
         const id = await monthlyModel.getUser(req.session.email);
         let dailyExpense = await monthlyModel.getTotalDailyExpense(id.id);
-        //console.log("this is the test for expenses", test);
         if (dailyExpense.total === null) {
             dailyExpense.total = 0;
         }
         const refreshTime = await monthlyModel.getTimestamp(id.id);
-        //console.log("this is the refreshTime", refreshTime.reset_time);
         const currentDate = moment().format('MMMM Do YYYY, h:mm:ss a');
-        //console.log("this is the currentDate", currentDate);
-
 
         let test2;
-        if ('June 20th 2019, 2:12:11 am' === refreshTime.reset_time) { //'June 20, 2019 2:11 PM'
-            await monthlyModel.resetBudget(refreshTime.set_budget, id.id)//{'alloted_budget' : refreshTime.set_budget};
+        if ('June 20th 2019, 2:12:11 am' === refreshTime.reset_time) { //'June 20th 2019, 2:12:11 am'
+            await monthlyModel.resetBudget(refreshTime.set_budget, id.id)
             .then(async() => {
                 test2 = await monthlyModel.getRemainingBalance(id.id);
                 await monthlyModel.clearExpense();
@@ -93,8 +89,6 @@ router.get('/history', async (req, res, next) => {
 router.get('/expenses/:category', async (req, res, next) => {
     if(!!req.session.is_logged_in) {
         const id = await monthlyModel.getUser(req.session.email);
-        console.log("this is the req params", req.params.category);
-        //const category = req.params.category;
         const listOfExpenses = await monthlyModel.getCategoryExpense(id.id, req.params.category);
         res.render('template', {
             locals: {
@@ -118,9 +112,7 @@ router.post('/expenses', async function(req, res, next) {
     const id = await monthlyModel.getUser(req.session.email);
     const timestamp = moment().format('MMMM Do YYYY, h:mm:ss a');
     const refreshTime = await monthlyModel.getTimestamp(id.id);
-    console.log("this is the refreshTime", refreshTime.reset_time);
     const currentDate = moment().format('MMMM Do YYYY, h:mm:ss a');
-    console.log("this is the currentDate", currentDate);
     let percentage = (expense / refreshTime.set_budget).toFixed(2);
 
     monthlyModel.addExpense(category, description, expense, timestamp, percentage, id.id);
