@@ -72,27 +72,6 @@ router.get('/expenses', async (req, res, next) => {
 router.get('/history', async (req, res, next) => {
     if(!!req.session.is_logged_in) {
         const id = await monthlyModel.getUser(req.session.email);
-        // let dailyExpense = await monthlyModel.getHistoryOfExpenses(id.id);
-        // //console.log("this is the test for expenses", test);
-        // if (dailyExpense.total === null) {
-        //     dailyExpense.total = 0;
-        // }
-        // const refreshTime = await monthlyModel.getTimestamp(id.id);
-        // //console.log("this is the refreshTime", refreshTime.reset_time);
-        // const currentDate = moment().format('MMMM Do YYYY, h:mm:ss a');
-        // //console.log("this is the currentDate", currentDate);
-
-        // let test2;
-        // if ('June 20th 2019, 2:12:11 am' === refreshTime.reset_time) { //'June 20, 2019 2:11 PM'
-        //     await monthlyModel.resetBudget(refreshTime.set_budget, id.id)//{'alloted_budget' : refreshTime.set_budget};
-        //     .then(async() => {
-        //         test2 = await monthlyModel.getRemainingBalance(id.id);
-        //         //dailyExpense = await monthlyModel.
-        //     })
-        // } else {
-        //     test2 = await monthlyModel.getRemainingBalance(id.id);
-        // }
-        // console.log("this is test2", test2);
         const listOfExpenses = await monthlyModel.getHistoryOfExpenses(id.id);
         res.render('template', {
             locals: {
@@ -127,7 +106,7 @@ router.post('/expenses', async function(req, res, next) {
         console.log("this is the currentDate", currentDate);
 
         let test2;
-        if ('June 20th 2019, 2:12:10 am' === refreshTime.reset_time) {
+        if ('June 20th 2019, 2:12:11 am' === refreshTime.reset_time) {
             await monthlyModel.resetBudget(refreshTime.set_budget, id.id)//{'alloted_budget' : refreshTime.set_budget};
             .then(async() => {
                 test2 = await monthlyModel.getRemainingBalance(id.id);
