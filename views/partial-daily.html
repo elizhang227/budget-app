@@ -29,14 +29,15 @@
     <p class="p-expense"><b>Add Expense</b></p>
     <form action="/daily/expenses" method="POST">
             <label><b>Category:</b>
-                <input type="text" name="category"/>
+                <input type="text" name="category" placeholder="Food"/>
             </label>
             <label><b>Description:</b>
-                <input type="text" name="description"/>
+                <input type="text" name="description" placeholder="Farm Burger"/>
             </label>
             <label><b>Expense:</b>
-                <input type="text" name="expense"/>
+                <input type="text" name="expense" placeholder="16.88"/>
+                <button class="expense-button" type="submit">Add Expense</button>
             </label>
-            <button class="expense-button" type="submit">Add Expense</button>
+
     </form>
 </section>

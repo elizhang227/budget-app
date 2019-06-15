@@ -244,3 +244,32 @@ a {
     margin-right:20%;
   }
 }
+
+@media only screen and (max-width:946px) {
+  .expense-section {
+    margin: 0;
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 120px auto;
+    grid-template-areas:
+      "expense"
+      "table";
+  }
+
+  .div-expense {
+    max-width: 100%;
+    max-height: 100px;
+  }
+
+  .div-expense p {
+    display: inline-block;
+  }
+
+  .div-expense p:nth-of-type(1){
+    padding-right:50px;
+  }
+
+  .section-add-expense label{
+    display:inline-block;
+  }
+}
