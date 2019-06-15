@@ -131,7 +131,6 @@ router.post('/expenses', async function(req, res, next) {
         } else {
             test2 = await monthlyModel.getRemainingBalance(id.id);
         }
-        console.log("this is test2", test2);
 
         const listOfExpenses = await monthlyModel.getListOfExpenses(id.id);
 
