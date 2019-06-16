@@ -19,7 +19,7 @@ class Setup {
         }
     }
 
-    static async budgetTimestamp(budget, timestamp, reset_time, reset_id) {
+    static async setBudgetTimestamp(budget, timestamp, reset_time, reset_id) {
         try {
             const response = await db.one(`
             INSERT INTO budget_timestamp
@@ -33,6 +33,18 @@ class Setup {
         }
     }
 
+    static async updateBudgetTimestamp(budget, timestamp, reset_time, reset_id) {
+        try {
+            const response = await db.one(`
+            update budget_timestamp
+            set set_budget=${budget}, timestamp='${timestamp}', reset_time='${reset_time}'
+            Where reset_id=${reset_id}`);
+            return response;
+        } catch(err) {
+            return err.message;
+        }
+    }
+
     static async budgetExists(id) {
         try {
             const response = await db.one(`
@@ -40,6 +52,18 @@ class Setup {
             FROM budget
             WHERE budget_id=${id}`);
             console.log("this is the response of budget", response);
+            return response;
+        } catch(err) {
+            return err.message;
+        }
+    }
+
+    static async timestampExists(id) {
+        try {
+            const response = await db.one(`
+            SELECT reset_time
+            FROM budget_timestamp
+            WHERE reset_id=${id}`);
             return response;
         } catch(err) {
             return err.message;
