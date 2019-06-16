@@ -1,23 +1,10 @@
 const express = require('express'),
   router = express.Router(),
   bcrypt = require('bcryptjs'),
+  userController = require('../controllers/users'),
   UsersModel = require('../models/users');
 
-router.get('/', async (req, res, next) => {
-  const allUsers = await UsersModel.getAllUsers();
-  res.render('template', {
-    locals: {
-      title: 'User Page',
-      userList: allUsers,
-      is_logged_in: req.session.is_logged_in,
-      userName: req.session.first_name,
-      email: req.session.email
-    },
-    partials: {
-      content: 'partial-users',
-    }
-  });
-});
+router.get('/', userController.homepage_get);
 
 router.get('/login', async (req, res) => {
   res.render('template', {
