@@ -10,26 +10,7 @@ router.get('/expenses', dailyController.expenses_get);
 
 router.get('/history', dailyController.history_get);
 
-router.get('/expenses/:category', async (req, res, next) => {
-    if(!!req.session.is_logged_in) {
-        const id = await monthlyModel.getUser(req.session.email);
-        const listOfExpenses = await monthlyModel.getCategoryExpense(id.id, req.params.category);
-        res.render('template', {
-            locals: {
-                title: `Welcome to my dungeon`,
-                listOfExpenses: listOfExpenses,
-                is_logged_in: req.session.is_logged_in,
-                userName: req.session.first_name,
-                email: req.session.email
-            },
-            partials: {
-                content: 'partial-expense-category'
-            }
-        });
-    } else {
-        res.redirect('/users/login');
-    }
-})
+router.get('/expenses/:category', dailyController.expenses_by_category_get);
 
 router.post('/expenses', async function(req, res, next) {
     const { category, description, expense } = req.body;
