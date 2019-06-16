@@ -3,6 +3,7 @@ drop table users;
 drop table daily;
 drop table budget_timestamp;
 drop table budget;
+drop table history;
 create table users
 (
     id serial primary key,
