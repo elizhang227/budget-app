@@ -9,7 +9,7 @@ router.get('/', async function(req, res, next) {
         const balance = await monthlyModel.getRemainingBalance(id.id);
         res.render('template', {
             locals: {
-                title: `Welcome to my dungeon`,//${req.session.first_name}`,
+                title: `Welcome to my dungeon`,
                 balance: balance,
                 is_logged_in: req.session.is_logged_in,
                 userName: req.session.first_name,
@@ -34,24 +34,24 @@ router.get('/expenses', async (req, res, next) => {
         const refreshTime = await monthlyModel.getTimestamp(id.id);
         const currentDate = moment().format('MMMM Do YYYY, h:mm:ss a');
 
-        let test2;
+        let remainingBalance;
         if ('June 20th 2019, 2:12:11 am' === refreshTime.reset_time) { //'June 20th 2019, 2:12:11 am'
             await monthlyModel.resetBudget(refreshTime.set_budget, id.id)
             .then(async() => {
-                test2 = await monthlyModel.getRemainingBalance(id.id);
+                remainingBalance = await monthlyModel.getRemainingBalance(id.id);
                 await monthlyModel.clearExpense();
             })
         } else {
-            test2 = await monthlyModel.getRemainingBalance(id.id);
+            remainingBalance = await monthlyModel.getRemainingBalance(id.id);
         }
-        console.log("this is test2", test2);
+        console.log("this is remainingBalance", remainingBalance);
         const listOfExpenses = await monthlyModel.getListOfExpenses(id.id);
         res.render('template', {
             locals: {
-                title: `Welcome to my dungeon`,//${req.session.first_name}`,
+                title: `Welcome to my dungeon`,
                 listOfExpenses: listOfExpenses,
                 expenseList: dailyExpense,
-                balance: test2,
+                balance: remainingBalance,
                 is_logged_in: req.session.is_logged_in,
                 userName: req.session.first_name,
                 email: req.session.email
@@ -71,7 +71,7 @@ router.get('/history', async (req, res, next) => {
         const listOfExpenses = await monthlyModel.getHistoryOfExpenses(id.id);
         res.render('template', {
             locals: {
-                title: `Welcome to my dungeon`,//${req.session.first_name}`,
+                title: `Welcome to my dungeon`,
                 listOfExpenses: listOfExpenses,
                 is_logged_in: req.session.is_logged_in,
                 userName: req.session.first_name,
@@ -92,7 +92,7 @@ router.get('/expenses/:category', async (req, res, next) => {
         const listOfExpenses = await monthlyModel.getCategoryExpense(id.id, req.params.category);
         res.render('template', {
             locals: {
-                title: `Welcome to my dungeon`,//${req.session.first_name}`,
+                title: `Welcome to my dungeon`,
                 listOfExpenses: listOfExpenses,
                 is_logged_in: req.session.is_logged_in,
                 userName: req.session.first_name,
@@ -122,23 +122,23 @@ router.post('/expenses', async function(req, res, next) {
         let dailyExpense = await monthlyModel.getTotalDailyExpense(id.id);
         await monthlyModel.subtractFromBalance(expense, id.id);
 
-        let test2;
+        let remainingBalance;
         if ('June 20th 2019, 2:12:11 am' === refreshTime.reset_time) {
-            await monthlyModel.resetBudget(refreshTime.set_budget, id.id)//{'alloted_budget' : refreshTime.set_budget};
+            await monthlyModel.resetBudget(refreshTime.set_budget, id.id)
             .then(async() => {
-                test2 = await monthlyModel.getRemainingBalance(id.id);
+                remainingBalance = await monthlyModel.getRemainingBalance(id.id);
             })
         } else {
-            test2 = await monthlyModel.getRemainingBalance(id.id);
+            remainingBalance = await monthlyModel.getRemainingBalance(id.id);
         }
 
         const listOfExpenses = await monthlyModel.getListOfExpenses(id.id);
 
         res.render('template', {
             locals: {
-                title: `Daily Expense Breakdown`,//${req.session.first_name}`,
+                title: `Daily Expense Breakdown`,
                 expenseList: dailyExpense,
-                balance: test2,
+                balance: remainingBalance,
                 listOfExpenses: listOfExpenses,
                 is_logged_in: req.session.is_logged_in,
                 userName: req.session.first_name,
