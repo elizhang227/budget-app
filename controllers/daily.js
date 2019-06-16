@@ -33,7 +33,6 @@ exports.weekly_expenses_get = async (req, res) => {
             await monthlyModel.resetBudget(refreshTime.set_budget, id.id)
             .then(async() => {
                 remainingBalance = await monthlyModel.getRemainingBalance(id.id);
-                console.log("I AM HERE BROOOOOOOOOOOOOOO");
                 await monthlyModel.clearExpense();
             })
         } else {
