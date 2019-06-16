@@ -26,8 +26,8 @@ exports.setup_post = async (req, res) => {
         const userID = await setupModel.getUser(req.session.email);
         const check = await setupModel.budgetExists(userID.id);
         const timestamp = await setupModel.timestampExists(userID.id);
-        const date = moment().format('LLL');
-        const refresh = moment().add(7, 'days').format('LLL');
+        const date = moment().format('MMMM Do YYYY, h:mm:ss a');
+        const refresh = moment().add(7, 'days').format('MMMM Do YYYY, h:mm:ss a');
         console.log(refresh);
         if (check.alloted_budget === null) { //they didnt set a budget
             console.log("why is this null?");
