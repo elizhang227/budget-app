@@ -62,3 +62,24 @@ exports.expenses_get = async (req, res) => {
         res.redirect('/users/login');
     }
 }
+
+exports.history_get = async (req, res) => {
+    if(!!req.session.is_logged_in) {
+        const id = await monthlyModel.getUser(req.session.email);
+        const listOfExpenses = await monthlyModel.getHistoryOfExpenses(id.id);
+        res.render('template', {
+            locals: {
+                title: `Welcome to my dungeon`,
+                listOfExpenses: listOfExpenses,
+                is_logged_in: req.session.is_logged_in,
+                userName: req.session.first_name,
+                email: req.session.email
+            },
+            partials: {
+                content: 'partial-history'
+            }
+        });
+    } else {
+        res.redirect('/users/login');
+    }
+}
