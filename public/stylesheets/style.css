@@ -16,7 +16,7 @@ span {
 
 .navbar-brand a {
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: #A69349;
 }
 
@@ -383,6 +383,33 @@ span {
   }
 }
 
+@media only screen and (max-width:1280px) {
+  .landing-page {
+    font-family: 'Source Sans Pro', sans-serif;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50px 400px;
+    grid-template-areas:
+      "empty empty"
+      "divOne divTwo";
+    margin: 0 0 100px;
+  }
+
+  .divOne {
+    padding-left: 100px;
+    grid-area: divOne;
+    color: #A69349;
+  }
+
+  .divOne h1{
+    padding-top: 70px;
+    font-size: 3.9rem;
+    font-weight: bold;
+    line-height: 4.5rem;
+    padding-bottom: 1.3rem;
+  }
+}
+
 @media only screen and (max-width:947px) {
   .expense-section {
     display:grid;
@@ -408,5 +435,15 @@ span {
 
   .section-add-expense label{
     display:inline-block;
+  }
+
+  .title-image {
+    padding-top: 100px;
+    transform: rotate(0);
+    right:20%
+  }
+
+  .landing-page {
+    grid-template-rows: 50px 550px
   }
 }
