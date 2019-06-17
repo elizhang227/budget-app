@@ -6,19 +6,19 @@
     <table class="table table-expense">
         <thead>
             <tr>
-                <td><b>Category</b></td>
+                <td><b>Date</b></td>
                 <td><b>Description</b></td>
-                <td><b>Cost</b></td>
-                <td><b>Timestamp</b></td>
+                <td><b>Category</b></td>
+                <td><b>Amount</b></td>
                 <td><b>Percentage</b></td>
             </tr>
         </thead>
         ${listOfExpenses.map(x =>
                 `<tr>
-                    <td><a href="expenses/${x.daily_category}">${x.daily_category}</a></td>
-                    <td>${x.description}</td>
-                    <td>${x.daily_expense}</td>
                     <td>${x.daily_timestamp}</td>
+                    <td>${x.description}</td>
+                    <td><a href="expenses/${x.daily_category}">${x.daily_category}</a></td>
+                    <td>$${x.daily_expense}</td>
                     <td>${x.percentage}%</td>
                 </tr>`
             ).join('')}
