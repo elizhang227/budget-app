@@ -16,7 +16,7 @@ span {
 
 .navbar-brand a {
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 3rem;
+  font-size: 2rem;
   color: #A69349;
 }
 
@@ -260,6 +260,7 @@ span {
 }
 
 .expense-section {
+  background-color: #263448;
   margin: 0;
   display:grid;
   grid-template-columns: 1fr 1fr;
@@ -271,9 +272,9 @@ span {
 }
 
 .div-expense {
-  background-color: white;
+  background-color: #263448;
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 2rem;
+  font-size: 1.75rem;
   grid-area: expense;
   max-width: 400px;
   max-height: 150px;
@@ -283,7 +284,7 @@ span {
 
 
 .div-expense p:nth-of-type(1){
-  color:black;
+  color:#f1c550;
 }
 
 .div-expense p:nth-of-type(2){
@@ -293,12 +294,14 @@ span {
 .table-expense {
   grid-area:table;
   font-family: 'Source Sans Pro', sans-serif;
+  background-color: #263448;
+  color: #263448;
 }
 
 .section-add-expense {
   grid-area: addexpense;
   font-family: 'Source Sans Pro', sans-serif;
-  background-color: white;
+  background-color: #263448;
   font-size: 1.5rem;
   -moz-box-shadow: 0 0 3px #ccc;
   -webkit-box-shadow: 0 0 3px #ccc;
