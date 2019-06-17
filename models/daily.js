@@ -67,7 +67,7 @@ class Daily {
         }
     }
 
-    static async getTotalDailyExpense(id) { //, timestamp)
+    static async getTotalDailyExpense(id) {
         try {
             const response = await db.one(`
             SELECT sum (daily_expense) as total
