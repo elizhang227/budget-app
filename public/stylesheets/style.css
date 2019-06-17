@@ -153,6 +153,10 @@ a {
   margin: 20px;
 }
 
+.testimonial-text {
+  font-size: 1.5rem;
+}
+
 .testimonials p {
   grid-area: p;
   font-family: 'Swanky and Moo Moo', cursive;
@@ -213,10 +217,11 @@ a {
   margin: 0;
   display:grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
+  grid-template-rows: 200px auto;
   grid-column-gap: 10px;
   grid-template-areas:
-    "expense table";
+    "expense table"
+    "addexpense table";
 }
 
 .div-expense {
@@ -238,11 +243,22 @@ a {
 }
 
 .section-add-expense {
+  grid-area: addexpense;
   font-family: 'Dosis', sans-serif;
   background-color: white;
   font-size: 1.5rem;
   -moz-box-shadow: 0 0 3px #ccc;
   -webkit-box-shadow: 0 0 3px #ccc;
+}
+
+.label-expense {
+  font-size: 1.5rem;
+  width:100%;
+  display:inline-block;
+}
+
+.label-expense input{
+  width: 200px;
 }
 
 .section-add-expense input{
