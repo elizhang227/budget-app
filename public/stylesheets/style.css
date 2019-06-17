@@ -1,17 +1,25 @@
 body {
-  background-color: #f6f6f6;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  padding: 50px;
+  font: 14px "Source Sans Pro", sans-serif;
 }
 
 a {
   color: #00B7FF;
 }
 
+.navbar-brand a {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 2rem;
+  color: #A69349;
+}
+
+.navbar-brand .navbar-item {
+  color: #A69349;
+}
+
 .container--login {
   background-color: white;
   box-shadow: 0 0 3px #ccc;
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   margin: 60px 25% 0;
   padding: 30px;
   -moz-box-shadow: 0 0 3px #ccc;
@@ -30,7 +38,7 @@ a {
 .container--signup {
   background-color: white;
   box-shadow: 0 0 3px #ccc;
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   margin: 60px 25% 0;
   padding: 30px;
   -moz-box-shadow: 0 0 3px #ccc;
@@ -67,6 +75,7 @@ a {
 }
 
 .landing-page {
+  font-family: 'Source Sans Pro', sans-serif;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
@@ -86,11 +95,15 @@ a {
 }
 
 .divOne button {
-  background-color: #ff8246;
+  background-color: #ef8172;
   font-size: 1rem;
   height: 3rem;
   margin-top: 1rem;
   width: 15rem;
+}
+
+.a-log-link {
+  color:white;
 }
 
 .divTwo {
@@ -106,49 +119,71 @@ a {
 
 .landing-page-hero h4 {
   color: #5588a3;
-  font-family: 'Noto Sans HK', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 1.3rem;
   padding-top: 20px;
   padding-bottom: 10px;
   margin-left: 40px;
 }
 
-.hero-item {
-  border: 2px solid #ffa45c;
-  border-radius: 100px;
-  box-shadow: 0 0 1pt 1pt #7189bf;
+.hero-list {
+  padding-bottom: 20px;
+}
+
+.title-image {
+  width: 60%;
+  transform: rotate(27deg);
+  z-index: -1;
+  position: absolute;
+  right: 10%;
+}
+
+.testimonials {
+  position: absolute;
+  background-color: #ef8172;
+  text-align: center;
+  color:#fff;
   display: grid;
-  grid-template-columns: 20% 50% 30%;
-  grid-template-rows: 3rem;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 100px 200px;
   grid-template-areas:
-    "date detail price";
-  margin: 10px 6%;
+    "p p p"
+    "one two three";
+  z-index: 1;
 }
 
-.list-item-date {
-  grid-area: date;
+.testimonial-image {
+  width:20%;
+  border-radius: 100%;
+  margin: 20px;
 }
 
-.list-item-detail {
-  grid-area: detail;
+.testimonial-text {
+  font-size: 1.5rem;
 }
 
-.list-item-price {
-  grid-area: price;
+.testimonials p {
+  grid-area: p;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 3rem;
 }
 
-.p-date {
-  text-align: center;
+.test-one {
+  grid-area: one;
 }
 
-.p-setup {
-  text-align: center;
+.test-two {
+  grid-area:two;
+}
+
+.test-three {
+  grid-area: three;
 }
 
 .add-modify-budget {
   background-color: white;
   box-shadow: 0 0 3px #ccc;
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   margin: 1rem 15%;
   padding: 30px;
   -moz-box-shadow: 0 0 3px #ccc;
@@ -162,8 +197,8 @@ a {
 
 .add-modify-budget input {
   font-size: 1.5rem;
-  width: 20%;
   height: 2rem;
+  width: 20%;
 }
 
 .add-modify-budget button {
@@ -187,14 +222,17 @@ a {
   margin: 0;
   display:grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
+  grid-template-rows: 200px auto;
+  grid-column-gap: 10px;
   grid-template-areas:
-    "expense table";
+    "expense table"
+    "addexpense table";
 }
 
 .div-expense {
   background-color: white;
   box-shadow: 0 0 3px #ccc;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 1.5rem;
   grid-area: expense;
   max-width: 400px;
@@ -206,17 +244,38 @@ a {
 
 .table-expense {
   grid-area:table;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .section-add-expense {
+  grid-area: addexpense;
+  font-family: 'Source Sans Pro', sans-serif;
   background-color: white;
   font-size: 1.5rem;
   -moz-box-shadow: 0 0 3px #ccc;
   -webkit-box-shadow: 0 0 3px #ccc;
 }
 
-.section-add-expense input{
-  height: 1.3rem;
+.label-expense {
+  font-size: 1.5rem;
+  width:100%;
+  display:inline-block;
+}
+
+.label-expense input{
+  font-size: 1.3rem;
+  height: 1.5rem;
+  width: 200px;
+}
+
+.input-category {
+  display: inline;
+  padding-left: 40px;
+}
+
+.input-expense {
+  display: inline-block;
+  padding-left: 40px;
 }
 
 .p-expense {
@@ -226,28 +285,45 @@ a {
 }
 
 .expense-button {
-  background-color: #FFFFFF;
+  background-color: #85ef47;
+  border-radius: 30%;
   margin-left: 10px;
   width: 100px;
   height: 1.4rem;
+  margin-top: 10px;
+  margin-left: 300px;
 }
 
 @media only screen and (max-width:895px) {
   .landing-page {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 410px 500px;
+    grid-template-rows: auto;
+    grid-row-gap: 100px;
     grid-template-areas:
       "divOne"
       "divTwo";
     margin-left:20%;
     margin-right:20%;
   }
+
+  .testimonials {
+    background-color: #ef8172;
+    text-align: center;
+    color:#fff;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px auto;
+    grid-template-areas:
+      "p"
+      "one"
+      "two"
+      "three";
+  }
 }
 
-@media only screen and (max-width:946px) {
+@media only screen and (max-width:947px) {
   .expense-section {
-    margin: 0;
     display:grid;
     grid-template-columns: 1fr;
     grid-template-rows: 120px auto;
