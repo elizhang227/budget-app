@@ -1,5 +1,5 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Source Sans Pro", sans-serif;
 }
 
 a {
@@ -7,14 +7,18 @@ a {
 }
 
 .navbar-brand a {
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 2rem;
+}
+
+.navbar-brand .navbar-item {
+  color: #A69349;
 }
 
 .container--login {
   background-color: white;
   box-shadow: 0 0 3px #ccc;
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   margin: 60px 25% 0;
   padding: 30px;
   -moz-box-shadow: 0 0 3px #ccc;
@@ -33,7 +37,7 @@ a {
 .container--signup {
   background-color: white;
   box-shadow: 0 0 3px #ccc;
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   margin: 60px 25% 0;
   padding: 30px;
   -moz-box-shadow: 0 0 3px #ccc;
@@ -70,6 +74,7 @@ a {
 }
 
 .landing-page {
+  font-family: 'Source Sans Pro', sans-serif;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
@@ -113,7 +118,7 @@ a {
 
 .landing-page-hero h4 {
   color: #5588a3;
-  font-family: 'Noto Sans HK', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 1.3rem;
   padding-top: 20px;
   padding-bottom: 10px;
@@ -151,7 +156,7 @@ a {
 
 .testimonials p {
   grid-area: p;
-  font-family: 'Swanky and Moo Moo', cursive;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 3rem;
 }
 
@@ -170,7 +175,7 @@ a {
 .add-modify-budget {
   background-color: white;
   box-shadow: 0 0 3px #ccc;
-  font-family: 'Dosis', sans-serif;
+  ffont-family: 'Source Sans Pro', sans-serif;
   margin: 1rem 15%;
   padding: 30px;
   -moz-box-shadow: 0 0 3px #ccc;
@@ -218,7 +223,7 @@ a {
 .div-expense {
   background-color: white;
   box-shadow: 0 0 3px #ccc;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 1.5rem;
   grid-area: expense;
   max-width: 400px;
@@ -230,11 +235,11 @@ a {
 
 .table-expense {
   grid-area:table;
-  font-family: 'Merriweather', serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .section-add-expense {
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   background-color: white;
   font-size: 1.5rem;
   -moz-box-shadow: 0 0 3px #ccc;
