@@ -1,4 +1,4 @@
-<section class="section expense-section">
+<section class="section expense-section container">
     <div class="div-expense">
         <p>Total Daily Expense: $${expenseList.total}</p>
         <p>Remaining Balance: $${balance.alloted_budget}</p>
@@ -25,17 +25,24 @@
     </table>
 </section>
 
-<section class="section section-add-expense">
+<section class="section section-add-expense container">
     <p class="p-expense"><b>Add Expense</b></p>
     <form action="/daily/expenses" method="POST">
             <label><b>Category:</b>
-                <input type="text" name="category" placeholder="Food"/>
+                <input type="text" name="category" placeholder="Food" list="category-id" autocomplete="off"/>
+                <datalist id='category-id'>
+                  <option label='Entertainment' value='Entertainment'>
+                  <option label='Food' value='Food'>
+                  <option label='Payment' value='Payment'>
+                  <option label='Vehicle' value='Vehicle'>
+                  <option label='Other' value='Other'>
+                </datalist>
             </label>
             <label><b>Description:</b>
-                <input type="text" name="description" placeholder="Farm Burger"/>
+                <input type="text" name="description" placeholder="Farm Burger" autocomplete="off"/>
             </label>
             <label><b>Expense:</b>
-                <input type="text" name="expense" placeholder="16.88"/>
+                <input type="text" name="expense" placeholder="16.88" autocomplete="off"/>
                 <button class="expense-button" type="submit">Add Expense</button>
             </label>
 

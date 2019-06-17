@@ -10,6 +10,7 @@ router.get('/', async function(req, res, next) {
         res.render('template', {
             locals: {
                 title: `Welcome to my dungeon`,//${req.session.first_name}`,
+                email: req.session.email,
                 balance: balance,
                 is_logged_in: req.session.is_logged_in,
                 userName: req.session.first_name,
@@ -136,7 +137,7 @@ router.post('/expenses', async function(req, res, next) {
 
         res.render('template', {
             locals: {
-                title: `Daily Expense Breakdown`,//${req.session.first_name}`,
+                title: 'Daily Expense Breakdown',//${req.session.first_name}`,
                 expenseList: dailyExpense,
                 balance: test2,
                 listOfExpenses: listOfExpenses,
