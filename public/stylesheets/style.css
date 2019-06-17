@@ -257,9 +257,22 @@ a {
 }
 
 .label-expense {
+  padding-left: 20px;
   font-size: 1.5rem;
   width:100%;
   display:inline-block;
+}
+
+.b-exp {
+  padding-right: 58px;
+}
+
+.b-cat {
+  padding-right: 50px;
+}
+
+.b-desc {
+  padding-right: 23px;
 }
 
 .label-expense input{
@@ -291,7 +304,7 @@ a {
   width: 100px;
   height: 1.4rem;
   margin-top: 10px;
-  margin-left: 300px;
+  margin-left: 290px;
 }
 
 @media only screen and (max-width:895px) {
