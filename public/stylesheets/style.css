@@ -9,8 +9,12 @@ a {
 .navbar-brand a {
   font-family: 'Dosis', sans-serif;
   font-size: 2rem;
+  color: #A69349;
 }
 
+.navbar-style {
+  background-color: gray;
+}
 .container--login {
   background-color: white;
   box-shadow: 0 0 3px #ccc;
@@ -126,12 +130,14 @@ a {
 
 .title-image {
   width: 60%;
-  transform: rotate(25deg);
+  transform: rotate(27deg);
+  z-index: -1;
   position: absolute;
   right: 10%;
 }
 
 .testimonials {
+  position: absolute;
   background-color: #ef8172;
   text-align: center;
   color:#fff;
@@ -141,6 +147,7 @@ a {
   grid-template-areas:
     "p p p"
     "one two three";
+  z-index: 1;
 }
 
 .testimonial-image {
