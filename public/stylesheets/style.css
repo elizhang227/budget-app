@@ -158,6 +158,10 @@ a {
   margin: 20px;
 }
 
+.testimonial-text {
+  font-size: 1.5rem;
+}
+
 .testimonials p {
   grid-area: p;
   font-family: 'Source Sans Pro', sans-serif;
@@ -218,10 +222,11 @@ a {
   margin: 0;
   display:grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
+  grid-template-rows: 200px auto;
   grid-column-gap: 10px;
   grid-template-areas:
-    "expense table";
+    "expense table"
+    "addexpense table";
 }
 
 .div-expense {
@@ -243,6 +248,7 @@ a {
 }
 
 .section-add-expense {
+  grid-area: addexpense;
   font-family: 'Source Sans Pro', sans-serif;
   background-color: white;
   font-size: 1.5rem;
@@ -250,8 +256,26 @@ a {
   -webkit-box-shadow: 0 0 3px #ccc;
 }
 
-.section-add-expense input{
-  height: 1.3rem;
+.label-expense {
+  font-size: 1.5rem;
+  width:100%;
+  display:inline-block;
+}
+
+.label-expense input{
+  font-size: 1.3rem;
+  height: 1.5rem;
+  width: 200px;
+}
+
+.input-category {
+  display: inline;
+  padding-left: 40px;
+}
+
+.input-expense {
+  display: inline-block;
+  padding-left: 40px;
 }
 
 .p-expense {
@@ -266,6 +290,8 @@ a {
   margin-left: 10px;
   width: 100px;
   height: 1.4rem;
+  margin-top: 10px;
+  margin-left: 300px;
 }
 
 @media only screen and (max-width:895px) {
