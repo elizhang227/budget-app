@@ -107,8 +107,8 @@ class Daily {
     static async getUser(email) {
         try {
             const response = await db.one(`
-            select id 
-            from users 
+            select id
+            from users
             where email='${email}'`);
             return response;
         } catch(err) {

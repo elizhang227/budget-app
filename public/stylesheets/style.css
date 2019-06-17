@@ -1,11 +1,14 @@
 body {
-  background-color: #f6f6f6;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  padding: 50px;
 }
 
 a {
   color: #00B7FF;
+}
+
+.navbar-brand a {
+  font-family: 'Dosis', sans-serif;
+  font-size: 2rem;
 }
 
 .container--login {
@@ -86,11 +89,15 @@ a {
 }
 
 .divOne button {
-  background-color: #ff8246;
+  background-color: #ef8172;
   font-size: 1rem;
   height: 3rem;
   margin-top: 1rem;
   width: 15rem;
+}
+
+.a-log-link {
+  color:white;
 }
 
 .divTwo {
@@ -113,36 +120,51 @@ a {
   margin-left: 40px;
 }
 
-.hero-item {
-  border: 2px solid #ffa45c;
-  border-radius: 100px;
-  box-shadow: 0 0 1pt 1pt #7189bf;
+.hero-list {
+  padding-bottom: 20px;
+}
+
+.title-image {
+  width: 60%;
+  transform: rotate(25deg);
+  position: absolute;
+  right: 10%;
+}
+
+.testimonials {
+  background-color: #ef8172;
+  text-align: center;
+  color:#fff;
   display: grid;
-  grid-template-columns: 20% 50% 30%;
-  grid-template-rows: 3rem;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 100px 200px;
   grid-template-areas:
-    "date detail price";
-  margin: 10px 6%;
+    "p p p"
+    "one two three";
 }
 
-.list-item-date {
-  grid-area: date;
+.testimonial-image {
+  width:20%;
+  border-radius: 100%;
+  margin: 20px;
 }
 
-.list-item-detail {
-  grid-area: detail;
+.testimonials p {
+  grid-area: p;
+  font-family: 'Swanky and Moo Moo', cursive;
+  font-size: 3rem;
 }
 
-.list-item-price {
-  grid-area: price;
+.test-one {
+  grid-area: one;
 }
 
-.p-date {
-  text-align: center;
+.test-two {
+  grid-area:two;
 }
 
-.p-setup {
-  text-align: center;
+.test-three {
+  grid-area: three;
 }
 
 .add-modify-budget {
@@ -162,8 +184,8 @@ a {
 
 .add-modify-budget input {
   font-size: 1.5rem;
-  width: 20%;
   height: 2rem;
+  width: 20%;
 }
 
 .add-modify-budget button {
@@ -188,6 +210,7 @@ a {
   display:grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
+  grid-column-gap: 10px;
   grid-template-areas:
     "expense table";
 }
@@ -195,6 +218,7 @@ a {
 .div-expense {
   background-color: white;
   box-shadow: 0 0 3px #ccc;
+  font-family: 'Nunito', sans-serif;
   font-size: 1.5rem;
   grid-area: expense;
   max-width: 400px;
@@ -206,9 +230,11 @@ a {
 
 .table-expense {
   grid-area:table;
+  font-family: 'Merriweather', serif;
 }
 
 .section-add-expense {
+  font-family: 'Dosis', sans-serif;
   background-color: white;
   font-size: 1.5rem;
   -moz-box-shadow: 0 0 3px #ccc;
@@ -226,7 +252,8 @@ a {
 }
 
 .expense-button {
-  background-color: #FFFFFF;
+  background-color: #85ef47;
+  border-radius: 30%;
   margin-left: 10px;
   width: 100px;
   height: 1.4rem;
@@ -236,18 +263,32 @@ a {
   .landing-page {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 410px 500px;
+    grid-template-rows: auto;
+    grid-row-gap: 100px;
     grid-template-areas:
       "divOne"
       "divTwo";
     margin-left:20%;
     margin-right:20%;
   }
+
+  .testimonials {
+    background-color: #ef8172;
+    text-align: center;
+    color:#fff;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px auto;
+    grid-template-areas:
+      "p"
+      "one"
+      "two"
+      "three";
+  }
 }
 
-@media only screen and (max-width:946px) {
+@media only screen and (max-width:947px) {
   .expense-section {
-    margin: 0;
     display:grid;
     grid-template-columns: 1fr;
     grid-template-rows: 120px auto;
