@@ -354,7 +354,7 @@ span {
 
 .thead-expense {
   background-color: #D0CFBE;
-  color: black;
+  color: #A69349;
 }
 
 /* .table-expense thead {
@@ -362,8 +362,12 @@ span {
   color: rgb(54, 54, 54);
 } */
 
+#navMenu .hovertest:hover {
+  color:#A69349 !important;
+}
+
 .table-expense {
-  color: #A69349;
+  color: rgb(68, 59, 24);
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 1.3rem;
   grid-area:table;
@@ -371,11 +375,10 @@ span {
 }
 
 .table-expense tr {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #A69349;
 }
-
-.table-expense tr:hover{
-  background-color: #5ca0d3;
+.table-expense tr:hover {
+  color: blue;
 }
 
 .section-add-expense {
@@ -396,15 +399,14 @@ span {
 }
 
 .p-expense {
-  /* color: #ff7a8a; */
-  color:#6b778d;
+  color:rgb(68, 59, 24) !important;
   font-size: 1.5rem;
   padding-bottom: 10px;
 }
 
 .b-exp {
   color:#A69349;
-  padding-right: 58px;
+  padding-right: 56px;
 }
 
 .b-cat {
@@ -454,8 +456,13 @@ span {
 
 /********* Daily/History Page **********/
 .expense-history-section {
+<<<<<<< HEAD
   height: 100vh;
   background-color:#263448;
+=======
+  height: 85vh;
+  background-color:#D0CFBE;
+>>>>>>> 149dac76fcd803899145fa840de39d87f4800122
   display:grid;
   grid-template-columns: 1fr;
   grid-template-rows: 130px auto;
@@ -466,7 +473,7 @@ span {
 }
 
 .p-history {
-  color: white;
+  color: rgb(68, 59, 24);
   font-size: 3rem;
   grid-area: p-hist;
 }
