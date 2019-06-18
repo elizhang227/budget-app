@@ -11,8 +11,7 @@
   <link href="https://fonts.googleapis.com/css?family=Swanky+and+Moo+Moo&display=swap" rel="stylesheet">
 </head>
 <body>
-  <nav class="navbar has-background-dark" role="navigation" aria-label="main navigation">
-    <div class="container">
+  <nav class="navbar has-background-dark nav-style" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <a href="/" class="navbar-item">CommonCents</a>
         <span class="navbar-burger burger" data-target="navMenu">
@@ -21,19 +20,19 @@
             <span class="span"></span>
         </span>
       </div>
-      <div id="navMenu" class="navbar-menu">
+      <div id="navMenu" class="navbar-menu has-background-dark level">
         ${!!is_logged_in ? `
-          <a href="/setup" class="navbar-item has-text-white">Add/Modify Budget</a>
-          <a href="/daily" class="navbar-item has-text-white">Add Expense</a>
-          <a href="/daily/expenses" class="navbar-item has-text-white">View Transactions</a>
-          <a href="/daily/history" class="navbar-item has-text-white">All History</a>
-          <a class="navbar-item has-text-white">Hello, ${userName}! ${email}</a>
-          <a class="navbar-item has-text-white" href='/users/logout'>Logout</a>
+          <a href="/setup" class="navbar-item has-text-white has-background-dark level-item">Add/Modify Budget</a>
+          <!-- <a href="/daily" class="navbar-item has-text-white has-background-dark level-item">Add Expense</a> -->
+          <a href="/daily/expenses" class="navbar-item has-text-white has-background-dark level-item">View Transactions</a>
+          <a href="/daily/history" class="navbar-item has-text-white has-background-dark level-item">All History</a>
+
+          <a class="navbar-item has-text-white has-background-dark level-item" href='/users/logout'>Logout</a>
+          <a class="navbar-item has-text-white has-background-dark level-item">Hello, ${userName}! ${email}</a>
         ` : `
-          <a class="navbar-item has-text-white" href='/users/login'>Login</a>
+          <a class="navbar-item has-text-white has-background-dark level-item" href='/users/login'>Login</a>
         `}
       </div>
-    </div>
   </nav>
   <!-- <h1 class="container">${title}</h1> -->
   <main>${content}</main>

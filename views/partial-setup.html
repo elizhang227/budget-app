@@ -1,12 +1,12 @@
 <section class="section-setup">
-  <p class="p-setup"><b>Please enter your information</b></p>
-  <div class="add-modify-budget">
-    <p>${date_day}</p>
-    <form action="/setup" method="POST">
-      <label><p class="p-budget-amt"><b>Desired Budget Amount Per Week:</b></p>
-          <input type="text" name="budget"/>
-          <button type="submit"><i class="fas fa-arrow-right"></i></button>
-      </label>
-    </form>
-  </div>
+    <p class="p-setup"><b>Please enter your information:</b></p>
+    <div class="add-modify-budget bounceInDown animated">
+      <p class="p-date">${date_day} - ${date_day_end}</p>
+      <form action="/setup" method="POST">
+        <label><p class="p-budget-amt"><b>Desired Budget Amount Per Week:</b></p>
+            <input type="text" name="budget"/>
+            <button class="" type="submit"><i class="fas fa-arrow-right"></i></button>
+        </label>
+      </form>
+    </div>
 </section>
