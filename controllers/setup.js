@@ -9,7 +9,8 @@ exports.homepage_get = async (req, res) => {
                 is_logged_in: req.session.is_logged_in,
                 userName: req.session.first_name,
                 email: req.session.email,
-                date_day: moment().format('ll')
+                date_day: moment().format('ll'),
+                date_day_end: moment().add(7, 'days').format('ll')
             },
             partials: {
                 content: 'partial-setup'
