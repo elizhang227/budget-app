@@ -14,8 +14,6 @@ span {
   color:#58b368;
 }
 
-
-
 .span {
   color:white;
 }
@@ -36,10 +34,10 @@ span {
 
 /******** Login Page *********/
 .section-login {
+  height: 100vh;
   background-color:#D0CFBE;
   color:#A69349;
-  height: 100vh;
-  padding-top: 50px;
+  padding: 30px 0;
 }
 
 .container--login {
@@ -47,7 +45,7 @@ span {
   box-shadow: 0 0 50px black;
   border-radius: 10px;
   font-family: 'Source Sans Pro', sans-serif;
-  margin: 60px 30% 0;
+  margin: 10px 30% 0;
   padding: 30px;
   -moz-box-shadow: 0 0 3px black;
   -webkit-box-shadow: 5px 10px 15px black;
@@ -91,20 +89,20 @@ span {
 /****** Signup Page *********/
 
 .section-signup {
-  background-color: #263448;
+  background-color: #D0CFBE;
   color:black;
-  height: 85vh;
-  padding-top: 100px;
+  height: 87vh;
+  padding-top: 50px;
 }
 
 .container--signup {
   font-family: 'Source Sans Pro', sans-serif;
   margin: 0 30%;
-  padding: 30px;
+  padding: 20px;
 }
 
 .container--signup p {
-  color: white;
+  color: rgb(68, 59, 24);
   font-size: 2.5rem;
   text-align: center;
   line-height: 45px;
@@ -131,7 +129,7 @@ span {
 }
 
 .container--signup a:hover {
-  color:white;
+  color:rgb(68, 59, 24);
 }
 
 .signin-button {
@@ -279,8 +277,8 @@ span {
 
 .section-setup {
   background-color: #D0CFBE;
-  color:white;
-  height: 85vh;
+  color:rgb(68, 59, 24);
+  height: 87vh;
   padding-top: 200px;
 }
 
@@ -327,8 +325,12 @@ span {
 }
 
 /******** Daily Page **********/
+
 .expense-section {
-  height: 85vh;
+  background-color:#D0CFBE;
+}
+
+.section-outter-expense {
   background-color:#D0CFBE;
   display:grid;
   grid-template-columns: 0.6fr 1.4fr;
@@ -337,7 +339,7 @@ span {
   grid-template-areas:
     "expense table"
     "addexpense table";
-  padding: 80px 8% 100px;
+  padding: 80px 8% 400px;
 }
 
 .div-expense {
@@ -351,16 +353,10 @@ span {
   color:#A69349;
 }
 
-
 .thead-expense {
   background-color: #D0CFBE;
   color: #A69349;
 }
-
-/* .table-expense thead {
-  background-color: #d0cfbe;
-  color: rgb(54, 54, 54);
-} */
 
 #navMenu .hovertest:hover {
   color:#A69349 !important;
@@ -391,7 +387,6 @@ span {
 }
 
 .label-expense {
-  /* padding-left: 20px; */
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 1.5rem;
   width:100%;
@@ -456,20 +451,14 @@ span {
 
 /********* Daily/History Page **********/
 .expense-history-section {
-<<<<<<< HEAD
-  height: 100vh;
-  background-color:#263448;
-=======
-  height: 85vh;
   background-color:#D0CFBE;
->>>>>>> 149dac76fcd803899145fa840de39d87f4800122
   display:grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 130px auto;
+  grid-template-rows: 100px auto;
   grid-template-areas:
     "p-hist"
     "table";
-  padding: 80px 20% 0;
+  padding: 10px 20% 700px;
 }
 
 .p-history {
@@ -480,19 +469,18 @@ span {
 
 /******* Category History Page *******/
 .section-category {
-  height: 85vh;
-  background-color:#263448;
+  background-color: #D0CFBE;
   display:grid;
   grid-template-columns: 1fr;
   grid-template-rows: 100px auto;
   grid-template-areas:
     "p"
     "table";
-  padding: 50px 20%;
+  padding: 50px 20% 100px;
 }
 
 .section-category p {
-  color:white;
+  color:rgb(68, 59, 24);
   font-size: 2rem;
   grid-area: p;
   text-align: center;
