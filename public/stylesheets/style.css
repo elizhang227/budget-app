@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font: 14px "Source Sans Pro", sans-serif;
 }
@@ -231,6 +235,23 @@ span {
   -webkit-box-shadow: 0 0 3px #ccc;
 }
 
+/*setup page*/
+
+.section-setup {
+  background-color:#263448;
+  color:white;
+  padding: 100px 15% 430px;
+}
+
+.p-setup {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.add-modify-budget {
+  background-color:#263448;
+}
+
 .add-modify-budget p {
   font-size: 1.5rem;
   padding-bottom: 20px;
@@ -262,13 +283,13 @@ span {
 .expense-section {
   background-color:#263448;
   display:grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.6fr 1.4fr;
   grid-template-rows: 180px auto;
-  grid-column-gap: 10px;
+  grid-column-gap: 20px;
   grid-template-areas:
     "expense table"
     "addexpense table";
-  padding: 80px 15% 100px;
+  padding: 80px 10% 100px;
 }
 
 .div-expense {
@@ -278,16 +299,23 @@ span {
   grid-area: expense;
   max-width: 400px;
   max-height: 150px;
-  padding: 20px;
 }
 
 .div-expense p {
   color:#f1c550;
 }
 
+.table-expense thead {
+  background-color: #ff8246;
+  color: black;
+}
+
 .table-expense {
-  grid-area:table;
+  color: white;
   font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.2rem;
+  grid-area:table;
+  line-height: 30px;
 }
 
 .section-add-expense {
