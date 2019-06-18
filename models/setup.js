@@ -19,6 +19,16 @@ class Setup {
         }
     }
 
+    static async clearExpense() {
+        try {
+            const response = await db.one(`
+            delete from daily`);
+            return response;
+        } catch(err) {
+            return err.message;
+        }
+    }
+
     static async setBudgetTimestamp(budget, timestamp, reset_time, reset_id) {
         try {
             const response = await db.one(`

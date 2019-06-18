@@ -24,7 +24,7 @@ span {
 
 .navbar-brand a {
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #A69349;
 }
 
@@ -34,20 +34,21 @@ span {
 
 /******** Login Page *********/
 .section-login {
-  background-color:#263448;
-  color:black;
+  background-color:#D0CFBE;
+  color:#A69349;
   height: 100vh;
   padding-top: 50px;
 }
 
 .container--login {
-  background-color: white;
-  box-shadow: 0 0 3px #ccc;
+  background-color: #D0CFBE;
+  box-shadow: 0 0 50px black;
+  border-radius: 10px;
   font-family: 'Source Sans Pro', sans-serif;
   margin: 60px 30% 0;
-  padding: 10px;
-  -moz-box-shadow: 0 0 3px #ccc;
-  -webkit-box-shadow: 0 0 3px #ccc;
+  padding: 30px;
+  -moz-box-shadow: 0 0 3px black;
+  -webkit-box-shadow: 5px 10px 15px black;
 }
 
 .h-sign {
@@ -76,6 +77,7 @@ span {
 
 .login--form h3 {
   font-size: 2rem;
+  color: #A69349;
 }
 
 .login--form input {
@@ -274,7 +276,7 @@ span {
 /******** Setup Page *********/
 
 .section-setup {
-  background-color:#263448;
+  background-color: #D0CFBE;
   color:white;
   height: 85vh;
   padding-top: 200px;
@@ -287,7 +289,7 @@ span {
 }
 
 .add-modify-budget {
-  background-color:#263448;
+  background-color:#D0CFBE;
   font-size: 1.5rem;
 }
 
@@ -308,13 +310,13 @@ span {
 .add-modify-budget button {
   border: none;
   color:red;
+  background-color: #D0CFBE;
   font-size: 1.75rem;
   margin-left: 10px;
 }
 
 .add-modify-budget button:hover {
   color:green;
-  background-color: red;
 }
 
 .p-budget-amt {
@@ -325,7 +327,7 @@ span {
 /******** Daily Page **********/
 .expense-section {
   height: 85vh;
-  background-color:#263448;
+  background-color:#D0CFBE;
   display:grid;
   grid-template-columns: 0.6fr 1.4fr;
   grid-template-rows: 180px auto;
@@ -337,23 +339,29 @@ span {
 }
 
 .div-expense {
-  background-color:#263448;
+  background-color:#D0CFBE;
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 2rem;
+  font-size: 1.75rem;
   grid-area: expense;
 }
 
 .div-expense p {
-  color:#f1c550;
+  color:#A69349;
 }
 
+
 .thead-expense {
-  background-color: #ff8246;
+  background-color: #D0CFBE;
   color: black;
 }
 
+/* .table-expense thead {
+  background-color: #d0cfbe;
+  color: rgb(54, 54, 54);
+} */
+
 .table-expense {
-  color: white;
+  color: #A69349;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 1.3rem;
   grid-area:table;
@@ -371,14 +379,15 @@ span {
 .section-add-expense {
   grid-area: addexpense;
   font-family: 'Source Sans Pro', sans-serif;
-  background-color: white;
+  background-color: #263448;
   font-size: 1.5rem;
   -moz-box-shadow: 0 0 3px #ccc;
   -webkit-box-shadow: 0 0 3px #ccc;
 }
 
 .label-expense {
-  padding-left: 20px;
+  /* padding-left: 20px; */
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 1.5rem;
   width:100%;
   display:inline-block;
@@ -392,18 +401,19 @@ span {
 }
 
 .b-exp {
-  color:#aee7e8;
+  color:#A69349;
   padding-right: 58px;
 }
 
 .b-cat {
-  color:#aee7e8;
+  color:#A69349;
   padding-right: 50px;
 }
 
 .b-desc {
   color:#aee7e8;
   padding-right: 23px;
+  color: #A69349;
 }
 
 .label-expense input{
@@ -422,8 +432,16 @@ span {
   padding-left: 40px;
 }
 
+.p-expense {
+  color: rgb(54, 54, 54);
+  font-size: 1.5rem;
+  padding-bottom: 10px;
+  /* padding-left: 20px; */
+}
+
 .expense-button {
-  background-color: #85ef47;
+  background-color: rgb(189, 170, 95);
+  border-color: #A69349;
   border-radius: 30%;
   margin-left: 10px;
   width: 100px;

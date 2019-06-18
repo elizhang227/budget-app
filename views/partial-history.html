@@ -3,18 +3,18 @@
         <table class="table-expense">
             <thead class="thead-expense">
                 <tr>
-                    <td><b>Category</b></td>
-                    <td><b>Description</b></td>
-                    <td><b>Cost</b></td>
                     <td><b>Timestamp</b></td>
+                    <td><b>Description</b></td>
+                    <td><b>Category</b></td>
+                    <td><b>Amount</b></td>
                 </tr>
             </thead>
             ${listOfExpenses.map(x =>
                     `<tr>
-                        <td><a href="">${x.history_category}</a></td>
-                        <td>${x.description}</td>
-                        <td>${x.history_expense}</td>
                         <td>${x.history_timestamp}</td>
+                        <td>${x.description}</td>
+                        <td><a href="">${x.history_category}</a></td>
+                        <td>$${x.history_expense}</td>
                     </tr>`
                 ).join('')}
         </table>
