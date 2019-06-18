@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font: 14px "Source Sans Pro", sans-serif;
 }
@@ -8,6 +12,10 @@ a {
 
 span {
   color:#58b368;
+}
+
+.span {
+  color:white;
 }
 
 .sec-style {
@@ -22,10 +30,6 @@ span {
 
 .navbar-brand .navbar-item {
   color: #A69349;
-}
-
-.nav-style {
-  color: white;
 }
 
 .container--login {
@@ -231,6 +235,23 @@ span {
   -webkit-box-shadow: 0 0 3px #ccc;
 }
 
+/*setup page*/
+
+.section-setup {
+  background-color:#263448;
+  color:white;
+  padding: 100px 15% 430px;
+}
+
+.p-setup {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.add-modify-budget {
+  background-color:#263448;
+}
+
 .add-modify-budget p {
   font-size: 1.5rem;
   padding-bottom: 20px;
@@ -260,42 +281,41 @@ span {
 }
 
 .expense-section {
-  background-color: #263448;
-  margin: 0;
+  background-color:#263448;
   display:grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 200px auto;
-  grid-column-gap: 10px;
+  grid-template-columns: 0.6fr 1.4fr;
+  grid-template-rows: 180px auto;
+  grid-column-gap: 20px;
   grid-template-areas:
     "expense table"
     "addexpense table";
+  padding: 80px 10% 100px;
 }
 
 .div-expense {
-  background-color: #263448;
+  background-color:#263448;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 1.75rem;
   grid-area: expense;
   max-width: 400px;
   max-height: 150px;
-  padding: 20px;
 }
 
-
-
-.div-expense p:nth-of-type(1){
+.div-expense p {
   color:#f1c550;
 }
 
-.div-expense p:nth-of-type(2){
-  color:#f1c550;
+.table-expense thead {
+  background-color: #ff8246;
+  color: black;
 }
 
 .table-expense {
-  grid-area:table;
+  color: white;
   font-family: 'Source Sans Pro', sans-serif;
-  background-color: #263448;
-  color: #263448;
+  font-size: 1.2rem;
+  grid-area:table;
+  line-height: 30px;
 }
 
 .section-add-expense {
@@ -386,6 +406,33 @@ span {
   }
 }
 
+@media only screen and (max-width:1280px) {
+  .landing-page {
+    font-family: 'Source Sans Pro', sans-serif;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50px 400px;
+    grid-template-areas:
+      "empty empty"
+      "divOne divTwo";
+    margin: 0 0 100px;
+  }
+
+  .divOne {
+    padding-left: 100px;
+    grid-area: divOne;
+    color: #A69349;
+  }
+
+  .divOne h1{
+    padding-top: 70px;
+    font-size: 3.9rem;
+    font-weight: bold;
+    line-height: 4.5rem;
+    padding-bottom: 1.3rem;
+  }
+}
+
 @media only screen and (max-width:947px) {
   .expense-section {
     display:grid;
@@ -411,5 +458,15 @@ span {
 
   .section-add-expense label{
     display:inline-block;
+  }
+
+  .title-image {
+    padding-top: 100px;
+    transform: rotate(0);
+    right:20%
+  }
+
+  .landing-page {
+    grid-template-rows: 50px 550px
   }
 }
