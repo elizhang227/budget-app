@@ -34,20 +34,21 @@ span {
 
 /******** Login Page *********/
 .section-login {
-  background-color:#263448;
-  color:black;
+  background-color:#D0CFBE;
+  color:#A69349;
   height: 85vh;
   padding-top: 100px;
 }
 
 .container--login {
-  background-color: white;
-  box-shadow: 0 0 3px #ccc;
+  background-color: #D0CFBE;
+  box-shadow: 0 0 50px black;
+  border-radius: 10px;
   font-family: 'Source Sans Pro', sans-serif;
   margin: 60px 30% 0;
   padding: 30px;
-  -moz-box-shadow: 0 0 3px #ccc;
-  -webkit-box-shadow: 0 0 3px #ccc;
+  -moz-box-shadow: 0 0 3px black;
+  -webkit-box-shadow: 5px 10px 15px black;
 }
 
 .h-sign {
@@ -76,6 +77,7 @@ span {
 
 .login--form h3 {
   font-size: 2rem;
+  color: #A69349;
 }
 
 .login--form input {
@@ -274,7 +276,7 @@ span {
 /******** Setup Page *********/
 
 .section-setup {
-  background-color:#D0CFBE8;
+  background-color: #D0CFBE;
   color:white;
   height: 85vh;
   padding-top: 200px;
@@ -349,8 +351,9 @@ span {
 
 
 .thead-expense {
-  background-color: #ff8246;
+  background-color: #D0CFBE;
   color: black;
+}
 
 /* .table-expense thead {
   background-color: #d0cfbe;
@@ -398,12 +401,12 @@ span {
 }
 
 .b-exp {
-  color:#aee7e8;
+  color:#A69349;
   padding-right: 58px;
 }
 
 .b-cat {
-  color:#aee7e8;
+  color:#A69349;
   padding-right: 50px;
 }
 
