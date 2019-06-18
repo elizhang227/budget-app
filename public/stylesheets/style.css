@@ -36,8 +36,8 @@ span {
 .section-login {
   background-color:#D0CFBE;
   color:#A69349;
-  height: 85vh;
-  padding-top: 100px;
+  height: 100vh;
+  padding-top: 50px;
 }
 
 .container--login {
@@ -88,7 +88,7 @@ span {
 
 /****** Signup Page *********/
 
-.section-signup{
+.section-signup {
   background-color: #263448;
   color:black;
   height: 85vh;
