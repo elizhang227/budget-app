@@ -1,48 +1,48 @@
 <section class="expense-section">
     <div class="div-expense">
-        <p>Total Daily Expense: <span>$${expenseList.total}</span></p>
-        <p>Remaining Balance: <span>$${balance.alloted_budget}</span></p>
+        <p><b>Total Daily Expense: </b><span>$${expenseList.total}</span></p>
+        <p><b>Remaining Balance: </b><span>$${balance.alloted_budget}</span></p>
     </div>
     <table class="table-expense">
         <thead>
             <tr>
-                <td><b>Date</b></td>
-                <td><b>Description</b></td>
-                <td><b>Category</b></td>
-                <td><b>Amount</b></td>
-                <td><b>Percentage</b></td>
+                <td><b><u>Date</u></b></td>
+                <td><b><u>Description</u></b></td>
+                <td><b><u>Category</u></b></td>
+                <td><b><u>Amount</u></b></td>
+                <td><b><u>Percentage</u></b></td>
             </tr>
         </thead>
         ${listOfExpenses.map(x =>
                 `<tr>
                     <td>${x.daily_timestamp}</td>
                     <td>${x.description}</td>
-                    <td><a href="expenses/${x.daily_category}">${x.daily_category}</a></td>
+                    <td><a href="expenses/${x.daily_category}" style="color:#5588a3;">${x.daily_category}</a></td>
                     <td>$${x.daily_expense}</td>
                     <td>${x.percentage}%</td>
                 </tr>`
             ).join('')}
     </table>
     <div class="">
-      <p class="p-expense"><b>Add Expense</b></p>
-      <form action="/daily/expenses" method="POST">
-              <label class="label-expense"><b class="b-cat">Category:</b>
-                  <input type="text" name="category" placeholder="Food" list="category-id" autocomplete="off"/>
-                  <datalist id='category-id'>
+        <p class="p-expense"><b><u>Add Expense</u></b></p>
+        <form action="/daily/expenses" method="POST">
+            <label class="label-expense"><b class="b-cat">Category:</b>
+                <input type="text" name="category" placeholder="Food" list="category-id" autocomplete="off"/>
+                <datalist id='category-id'>
                     <option label='Entertainment' value='Entertainment'>
                     <option label='Food' value='Food'>
                     <option label='Payment' value='Payment'>
                     <option label='Vehicle' value='Vehicle'>
                     <option label='Other' value='Other'>
-                  </datalist>
-              </label>
-              <label class="label-expense"><b class="b-desc">Description:</b>
-                  <input type="text" name="description" placeholder="Farm Burger" autocomplete="off"/>
-              </label>
-              <label class="label-expense"><b class="b-exp">Expense:</b>
-                  <input type="text" name="expense" placeholder="16.88" autocomplete="off"/>
-              </label>
-              <button class="expense-button" type="submit">Add Expense</button>
-      </form>
+                </datalist>
+            </label>
+            <label class="label-expense"><b class="b-desc">Description:</b>
+                <input type="text" name="description" placeholder="Farm Burger" autocomplete="off"/>
+            </label>
+            <label class="label-expense"><b class="b-exp">Expense:</b>
+                <input type="text" name="expense" placeholder="16.88" autocomplete="off"/>
+            </label>
+            <button class="expense-button" type="submit">Add Expense</button>
+        </form>
     </div>
 </section>

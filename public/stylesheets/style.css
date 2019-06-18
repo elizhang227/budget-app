@@ -238,8 +238,8 @@ span {
 /*setup page*/
 
 .section-setup {
-  background-color:#263448;
-  color:white;
+  background-color:#D0CFBE;
+  color:#263448;
   padding: 100px 15% 430px;
 }
 
@@ -249,7 +249,7 @@ span {
 }
 
 .add-modify-budget {
-  background-color:#263448;
+  background-color:#D0CFBE;
 }
 
 .add-modify-budget p {
@@ -266,13 +266,13 @@ span {
 .add-modify-budget button {
   border: none;
   color:red;
+  background-color: #D0CFBE;
   font-size: 1.75rem;
   margin-left: 10px;
 }
 
 .add-modify-budget button:hover {
   color:green;
-  background-color: red;
 }
 
 .p-budget-amt {
@@ -281,7 +281,7 @@ span {
 }
 
 .expense-section {
-  background-color:#263448;
+  background-color:#D0CFBE;
   display:grid;
   grid-template-columns: 0.6fr 1.4fr;
   grid-template-rows: 180px auto;
@@ -293,7 +293,7 @@ span {
 }
 
 .div-expense {
-  background-color:#263448;
+  background-color:#D0CFBE;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 1.75rem;
   grid-area: expense;
@@ -302,16 +302,16 @@ span {
 }
 
 .div-expense p {
-  color:#f1c550;
+  color:#A69349;
 }
 
 .table-expense thead {
-  background-color: #ff8246;
-  color: black;
+  background-color: #d0cfbe;
+  color: rgb(54, 54, 54);
 }
 
 .table-expense {
-  color: white;
+  color: #A69349;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 1.2rem;
   grid-area:table;
@@ -328,22 +328,26 @@ span {
 }
 
 .label-expense {
-  padding-left: 20px;
+  /* padding-left: 20px; */
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 1.5rem;
   width:100%;
   display:inline-block;
 }
 
 .b-exp {
-  padding-right: 58px;
+  padding-right: 55px;
+  color: #A69349;
 }
 
 .b-cat {
-  padding-right: 50px;
+  padding-right: 48px;
+  color: #A69349;
 }
 
 .b-desc {
   padding-right: 23px;
+  color: #A69349;
 }
 
 .label-expense input{
@@ -363,13 +367,15 @@ span {
 }
 
 .p-expense {
-  color: #5588a3;
+  color: rgb(54, 54, 54);
   font-size: 1.5rem;
   padding-bottom: 10px;
+  /* padding-left: 20px; */
 }
 
 .expense-button {
-  background-color: #85ef47;
+  background-color: rgb(189, 170, 95);
+  border-color: #A69349;
   border-radius: 30%;
   margin-left: 10px;
   width: 100px;
