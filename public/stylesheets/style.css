@@ -14,6 +14,8 @@ span {
   color:#58b368;
 }
 
+
+
 .span {
   color:white;
 }
@@ -452,7 +454,7 @@ span {
 
 /********* Daily/History Page **********/
 .expense-history-section {
-  height: 85vh;
+  height: 100vh;
   background-color:#263448;
   display:grid;
   grid-template-columns: 1fr;
@@ -489,7 +491,9 @@ span {
   text-align: center;
 }
 
-
+.foot {
+  padding: 5px 0;
+}
 
 @media only screen and (max-width:895px) {
   .landing-page {
