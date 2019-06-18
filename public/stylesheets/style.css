@@ -10,6 +10,10 @@ span {
   color:#58b368;
 }
 
+.span {
+  color:white;
+}
+
 .sec-style {
   background-color: #222222;
 }
@@ -22,10 +26,6 @@ span {
 
 .navbar-brand .navbar-item {
   color: #A69349;
-}
-
-.nav-style {
-  color: white;
 }
 
 .container--login {
@@ -260,18 +260,19 @@ span {
 }
 
 .expense-section {
-  margin: 0;
+  background-color:#263448;
   display:grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 200px auto;
+  grid-template-rows: 180px auto;
   grid-column-gap: 10px;
   grid-template-areas:
     "expense table"
     "addexpense table";
+  padding: 80px 15% 100px;
 }
 
 .div-expense {
-  background-color: white;
+  background-color:#263448;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 2rem;
   grid-area: expense;
@@ -280,13 +281,7 @@ span {
   padding: 20px;
 }
 
-
-
-.div-expense p:nth-of-type(1){
-  color:black;
-}
-
-.div-expense p:nth-of-type(2){
+.div-expense p {
   color:#f1c550;
 }
 
