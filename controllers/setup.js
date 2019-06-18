@@ -9,7 +9,8 @@ exports.homepage_get = async (req, res) => {
                 is_logged_in: req.session.is_logged_in,
                 userName: req.session.first_name,
                 email: req.session.email,
-                date_day: moment().format('ll')
+                date_day: moment().format('ll'),
+                date_day_end: moment().add(7, 'days').format('ll')
             },
             partials: {
                 content: 'partial-setup'
@@ -32,7 +33,8 @@ exports.setup_post = async (req, res) => {
         if (check.alloted_budget === null) { //they didnt set a budget
             console.log("why is this null?");
             const { budget } = req.body;
-            setupModel.updateBudget(budget, userID.id)
+            setupModel.updateBudget(budget, userID.id);
+            setupModel.clearExpense()
             .then(() => {
                 res.redirect('../daily/expenses');
             });
@@ -46,7 +48,8 @@ exports.setup_post = async (req, res) => {
         } else if (check.alloted_budget != null) {
             console.log("this is an object");
             const { budget } = req.body;
-            setupModel.updateBudget(budget, userID.id)
+            setupModel.updateBudget(budget, userID.id);
+            setupModel.clearExpense()
             .then(() => {
                 res.redirect('../daily/expenses');
             });
@@ -60,7 +63,8 @@ exports.setup_post = async (req, res) => {
         } else if (typeof check.alloted_budget != 'object') {
             console.log("this is not an object");
             const { budget } = req.body;
-            setupModel.setBudget(budget, userID.id)
+            setupModel.setBudget(budget, userID.id);
+            setupModel.clearExpense()
             .then(() => {
                 res.redirect('../daily/expenses');
             })
