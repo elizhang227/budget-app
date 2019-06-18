@@ -375,6 +375,9 @@ span {
 .table-expense tr {
   border-bottom: 1px solid #A69349;
 }
+.table-expense tr:hover {
+  color: blue;
+}
 
 .section-add-expense {
   grid-area: addexpense;
@@ -401,7 +404,7 @@ span {
 
 .b-exp {
   color:#A69349;
-  padding-right: 58px;
+  padding-right: 56px;
 }
 
 .b-cat {
