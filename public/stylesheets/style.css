@@ -328,7 +328,6 @@ span {
 
 /******** Daily Page **********/
 .expense-section {
-  height: 85vh;
   background-color:#D0CFBE;
   display:grid;
   grid-template-columns: 0.6fr 1.4fr;
@@ -357,11 +356,6 @@ span {
   color: #A69349;
 }
 
-/* .table-expense thead {
-  background-color: #d0cfbe;
-  color: rgb(54, 54, 54);
-} */
-
 #navMenu .hovertest:hover {
   color:#A69349 !important;
 }
@@ -376,9 +370,6 @@ span {
 
 .table-expense tr {
   border-bottom: 1px solid #A69349;
-}
-.table-expense tr:hover {
-  color: blue;
 }
 
 .section-add-expense {
@@ -456,20 +447,14 @@ span {
 
 /********* Daily/History Page **********/
 .expense-history-section {
-<<<<<<< HEAD
-  height: 100vh;
-  background-color:#263448;
-=======
-  height: 85vh;
   background-color:#D0CFBE;
->>>>>>> 149dac76fcd803899145fa840de39d87f4800122
   display:grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 130px auto;
+  grid-template-rows: 100px auto;
   grid-template-areas:
     "p-hist"
     "table";
-  padding: 80px 20% 0;
+  padding: 50px 20% 35px;
 }
 
 .p-history {
