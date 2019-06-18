@@ -32,7 +32,8 @@ exports.setup_post = async (req, res) => {
         if (check.alloted_budget === null) { //they didnt set a budget
             console.log("why is this null?");
             const { budget } = req.body;
-            setupModel.updateBudget(budget, userID.id)
+            setupModel.updateBudget(budget, userID.id);
+            setupModel.clearExpense()
             .then(() => {
                 res.redirect('../daily/expenses');
             });
@@ -46,7 +47,8 @@ exports.setup_post = async (req, res) => {
         } else if (check.alloted_budget != null) {
             console.log("this is an object");
             const { budget } = req.body;
-            setupModel.updateBudget(budget, userID.id)
+            setupModel.updateBudget(budget, userID.id);
+            setupModel.clearExpense()
             .then(() => {
                 res.redirect('../daily/expenses');
             });
@@ -60,7 +62,8 @@ exports.setup_post = async (req, res) => {
         } else if (typeof check.alloted_budget != 'object') {
             console.log("this is not an object");
             const { budget } = req.body;
-            setupModel.setBudget(budget, userID.id)
+            setupModel.setBudget(budget, userID.id);
+            setupModel.clearExpense()
             .then(() => {
                 res.redirect('../daily/expenses');
             })
