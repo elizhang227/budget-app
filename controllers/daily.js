@@ -8,7 +8,7 @@ exports.weekly_expenses_get = async (req, res) => {
         const currentDate = moment().format('MMMM Do YYYY, h:mm:ss a');
 
         let remainingBalance;
-        if ('June 23rd 2019, 5:06:47 pm' === refreshTime.reset_time) { //'June 20th 2019, 2:12:11 am'
+        if (currentDate === refreshTime.reset_time) { //'June 20th 2019, 2:12:11 am'
             await monthlyModel.resetBudget(refreshTime.set_budget, id.id)
             .then(async() => {
                 remainingBalance = await monthlyModel.getRemainingBalance(id.id);
@@ -59,7 +59,7 @@ exports.weekly_expenses_post = async (req, res) => {
             await monthlyModel.subtractFromBalance(expense, id.id);
 
             let remainingBalance;
-            if ('June 23rd 2019, 5:06:47 pm' === refreshTime.reset_time) {
+            if (currentDate === refreshTime.reset_time) {
                 await monthlyModel.resetBudget(refreshTime.set_budget, id.id)
                 .then(async() => {
                     remainingBalance = await monthlyModel.getRemainingBalance(id.id);
