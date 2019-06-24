@@ -370,6 +370,9 @@ span {
   line-height: 30px;
 }
 
+.table-expense td {
+  padding-right: 30px;
+}
 .table-expense tr {
   border-bottom: 1px solid #A69349;
 }
@@ -487,33 +490,7 @@ span {
   padding: 5px 0;
 }
 
-@media only screen and (max-width:895px) {
-  .landing-page {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    grid-row-gap: 100px;
-    grid-template-areas:
-      "divOne"
-      "divTwo";
-    margin-left:20%;
-    margin-right:20%;
-  }
 
-  .testimonials {
-    background-color: #ef8172;
-    text-align: center;
-    color:#fff;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 100px auto;
-    grid-template-areas:
-      "p"
-      "one"
-      "two"
-      "three";
-  }
-}
 
 @media only screen and (max-width:1280px) {
   .landing-page {
@@ -542,14 +519,54 @@ span {
   }
 }
 
-@media only screen and (max-width:947px) {
-  .expense-section {
+@media only screen and (max-width: 1097px){
+
+  .section-outter-expense {
+    background-color:#D0CFBE;
     display:grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 120px auto;
+    grid-template-rows: 110px auto;
     grid-template-areas:
       "expense"
       "table";
+    padding: 10px 0 600px;
+    margin: 0;
+  }
+
+
+  .table-expense td {
+    padding-right: 30px;
+  }
+}
+
+@media only screen and (max-width:947px) {
+
+  .section-outter-expense {
+    background-color:#D0CFBE;
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 110px auto;
+    grid-template-areas:
+      "expense"
+      "table";
+    padding: 10px 0 600px;
+  }
+
+  .expense-section {
+    background-color:#D0CFBE;
+  }
+
+  .table-expense {
+    color: rgb(68, 59, 24);
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1rem;
+    grid-area:table;
+    line-height: 30px;
+  }
+
+
+  .p-expense {
+    padding-top: 50px;
   }
 
   .div-expense {
@@ -577,5 +594,40 @@ span {
 
   .landing-page {
     grid-template-rows: 50px 550px
+  }
+}
+
+@media only screen and (max-width:895px) {
+  .landing-page {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-row-gap: 100px;
+    grid-template-areas:
+      "divOne"
+      "divTwo";
+    margin-left:20%;
+    margin-right:20%;
+  }
+
+  .testimonials {
+    background-color: rgb(33, 33, 33);
+    text-align: center;
+    color:#fff;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px auto;
+    grid-template-areas:
+      "p"
+      "one"
+      "two"
+      "three";
+  }
+
+  .section-setup {
+    background-color: #D0CFBE;
+    color:rgb(68, 59, 24);
+    height: 87vh;
+    padding-top: 100px;
   }
 }
