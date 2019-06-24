@@ -32,4 +32,8 @@ describe('Setup model tests', () => {
         const test = await Setup.budgetExists(1);
         expect(test).to.be.an('object');
     })
+    it('should be an object', async () => {
+        const test = await Setup.timestampExists(1);
+        expect(test).to.be.an('object');
+    })
 });

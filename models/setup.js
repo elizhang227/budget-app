@@ -61,7 +61,6 @@ class Setup {
             SELECT alloted_budget
             FROM budget
             WHERE budget_id=${id}`);
-            console.log("this is the response of budget", response);
             return response;
         } catch(err) {
             return err.message;
