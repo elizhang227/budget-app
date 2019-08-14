@@ -7,7 +7,7 @@
 
 ## Sample Search for a Movie Soundtrack
 
-![](./videos/cc.mp4)
+![](./videos/cc.gif)
 
 ## Description
 
