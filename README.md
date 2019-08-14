@@ -5,7 +5,7 @@
 **Click Here: [CommonCents - Website](http://ec2-3-19-73-90.us-east-2.compute.amazonaws.com//)**
 
 
-## Sample Search for a Movie Soundtrack
+## CommonCents In Action
 
 ![](./videos/cc.gif)
 
