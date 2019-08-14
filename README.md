@@ -5,24 +5,17 @@
 **Click Here: [CommonCents - Website](http://ec2-3-19-73-90.us-east-2.compute.amazonaws.com//)**
 
 
-### Sample Search for a Movie Soundtrack
+## Sample Search for a Movie Soundtrack
 
 ![](./images/main_tutorial.gif)
 
-### Overview
+## Description
 
-We created a website where users are able to find the complete soundtrack for any movie they want, all conveniently located on one page and clicking on songs will load the youtube video so users do not have to copy and paste the title of the song from some other website into youtube.
+CommonCents is an application that helps people track their expenses and budget accordingly. Having a breakdown and being able to physically see a number representing how much you spend will help users better manage their money and be smarter about their spending.
 
-The user inputs a movie title that they want the soundtrack for, it returns a list of search results where the user has to choose the desired movie. After they choose the movie there will be a list of all the songs from the soundtrack populated on the page and they have to click on a song they want to listen to and it will embed the corresponding video to the page.
+Even though we live in a digital age now, cash is still king and keeping all your physical receipts sounds like a hassle. With the help of this app, you can log all of your cash transactions and essentially have a permanent digital database for your receipts. 
 
-For our project we used 3 APIs:
-    OMDB: where we retrieved movie information from
-    Wikipedia: where we retrieved the soundtrack list from
-    Youtube: where we retrieved the song/video from
-
-Eli worked on the backend starting with APIs and getting the json file to display the information on the screen and RJ started on the front-end with HTML and CSS and we merged in the middle to help each other out with features we wanted to add to the website.
-
-### sonoSong is Web Responsive
+## sonoSong is Web Responsive
 
 ![](./images/responsive_tutorial.gif)
 
